@@ -41,6 +41,26 @@ genaiops_training/
 
 Later weeks go in `week2/`, `week3/` and so on, with the same `dayN/` layout.
 
+### What each assignment says to submit (copied from the briefs) → where it is
+
+Yes, the `.py` files are required: every brief asks for the changed code and the tests.
+
+| Brief says "What to submit" | File(s) in this repo |
+|---|---|
+| **Day 1** – a single Word or PDF write-up with Parts A to D | `week1/day1/docs/Day1_Writeup.pdf` |
+| **Day 1** – a zip of the files you changed (dispute_tools.py, policy.md, tickets.json, new tests) | `solutions/day1_ai_spectrum/*.py`, `data/policy.md`, `data/tickets.json`, `data/orders.json`, `tests/test_day1_assignment.py` |
+| **Day 1** – scoreboards before and after your change | `outputs/day1_runs/00_before_*`, `10_/11_partB_*`, `20_partC_*`, `30_after_*` |
+| **Day 2** – one Word or PDF write-up with Parts A to E | `week1/day2/docs/Day2_Writeup.pdf` (+ `Approved_Tools_Guideline_DRAFT.pdf` for Part E) |
+| **Day 2** – outputs/tier_comparison_Q1/Q2/Q3.md and the completed homework_comparison.md | `outputs/tier_comparison_Q1.md`, `_Q2.md`, `_Q3.md`, `outputs/homework_comparison.md` |
+| **Day 2** – a zip of changed files (sentences.json, verify_outputs.py, tests) | `solutions/day2_models_and_embeddings/data/sentences.json`, `verify_outputs.py`, `embeddings_map.py`, `data/my_query.txt`, `tests/test_day2.py` |
+| **Day 3** – Task A table and photo or scan of your working | Table in `docs/Day3_Writeup.pdf`; typed working in `docs/TaskA_hand_working.md`. **Photo: you must add it** |
+| **Day 3** – my_vector_math.py (with nearest()), your tests, checker output showing 4/4 PASS | `my_vector_math.py`, `test_mine.py`, `tests/test_vector_math.py`, `outputs/step3_check_my_code.txt`, `outputs/taskB_step3_after_nearest.txt` |
+| **Day 3** – prompt log from Task B | `docs/TaskB_prompt_log.md` |
+| **Day 3** – data/my_scenario.json, scenario_matrix.py output, prediction note | `data/my_scenario.json`, `outputs/taskC_scenario_matrix.txt`, `docs/TaskC_scenario.md` |
+| **Day 3** – Task D table and Task E write-up | `docs/Day3_Writeup.pdf` (Task D and Task E sections), `taskE_and_stretch.py` |
+| **Day 3** – a short checklist at the top | First section of `docs/Day3_Writeup.pdf` |
+| **All days** – do not submit `.env`, API keys, `.venv`, real data | None of these are in this repo |
+
 ### How to read the labels below
 
 | Label | Meaning |
