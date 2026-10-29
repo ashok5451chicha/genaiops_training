@@ -1,15 +1,216 @@
 # GenAI Ops training – homework
 
-Take-home assignments, organised by week and day.
+Take-home assignments for the GenAI Ops training, organised **week → day**. This repository is the holding area; the
+final submission goes to GitLab later (see [What to push to GitLab](#what-to-push-to-gitlab-later)).
 
-| Path | Assignment | Course repo |
-|---|---|---|
-| `week1/day1` | Day 1 – the automation-to-agentic spectrum (rule change, prompt-injection control, cost/speed/risk) | [automation-to-agentic-spectrum](https://github.com/digibhatia/automation-to-agentic-spectrum) |
-| `week1/day2` | Day 2 – model tiers, embeddings, output verification, approved-tools guideline | [automation-to-agentic-spectrum](https://github.com/digibhatia/automation-to-agentic-spectrum) |
-| `week1/day3` | Day 3 – cosine similarity and vector mathematics | [cosine-vector-mathematics](https://github.com/digibhatia/cosine-vector-mathematics) |
+All data is synthetic. **No API keys are in this repository.** `.env.example` holds a placeholder key only.
 
-Each day folder holds only the files that were changed or added for the homework, in the same paths as the course
-repo, so they can be copied over a fresh clone to run. Start with `IMPLEMENTATION_DAYn.md` (how it was done) and
-`docs/DayN_Writeup.pdf` (the write-up).
+---
 
-All data is synthetic. No API keys are included; `.env.example` holds a placeholder only.
+## 1. What this repository is (and is not)
+
+* Each day of the course has its own **course repository** on GitHub, owned by the trainer:
+
+  | Day | Course repo (the lab code you start from) |
+  |---|---|
+  | Day 1, Day 2 | https://github.com/digibhatia/automation-to-agentic-spectrum |
+  | Day 3 | https://github.com/digibhatia/cosine-vector-mathematics |
+
+* Every assignment means changing or adding files in that course repo, running them and writing up the results.
+* **This repository holds only the files that were changed or added for the homework.** The unchanged course files are
+  not copied here. Each file sits at **the same path as in the course repo**, so you can copy a day folder over a fresh
+  clone of its course repo and run everything.
+* The assignment documents (the `.docx` briefs from the trainer) are in the course repos, not here:
+  * Day 1: `docs/assignments/Day1_Take_Home_Assignment.docx` (automation-to-agentic-spectrum)
+  * Day 2: `docs/assignments/Day2_Take_Home_Assignment.docx` (automation-to-agentic-spectrum)
+  * Day 3: `Day3_Unguided_Session_Assignment_Outline.docx` and `Day3_Vector_Mathematics_Participant_Guide.docx`
+    (cosine-vector-mathematics)
+
+---
+
+## 2. Folder structure
+
+```
+genaiops_training/
+├── README.md                       ← this file
+└── week1/
+    ├── day1/                       ← Day 1 homework (overlay for automation-to-agentic-spectrum)
+    ├── day2/                       ← Day 2 homework (overlay for automation-to-agentic-spectrum)
+    └── day3/                       ← Day 3 homework (overlay for cosine-vector-mathematics)
+```
+
+Later weeks go in `week2/`, `week3/` and so on, with the same `dayN/` layout.
+
+### How to read the labels below
+
+| Label | Meaning |
+|---|---|
+| **SUBMIT** | Part of the assignment deliverable. Push it to GitLab. |
+| **EVIDENCE** | Output of a real run, which the write-up quotes. Push it, so the reviewer can check the numbers. |
+| **REFERENCE** | For our own understanding: how the work was done and how to re-run it. Not required by the assignment, but harmless to push. |
+
+---
+
+## 3. Week 1 / Day 1 – the automation-to-agentic spectrum
+
+**Assignment:** Part A: place a real business process on the 5-level spectrum. Part B: add a business rule change.
+Part C: attack the agent with prompt injection and add a code-level control. Part D: compare cost, speed and risk
+across levels.
+
+```
+week1/day1/
+├── IMPLEMENTATION_DAY1.md          REFERENCE  How Day 1 was done, step by step, with the bugs found and how to re-run
+├── .env.example                    SUBMIT     Template for the API key settings (placeholder only). Missing upstream; one test needs it
+├── docs/
+│   ├── Day1_Writeup.pdf            SUBMIT     The write-up: Parts A–D answered (the main document to read)
+│   └── Day1_Writeup.md             SUBMIT     Same write-up as editable Markdown
+├── solutions/day1_ai_spectrum/
+│   ├── dispute_tools.py            SUBMIT     Part B: loyalty grace rule (1 day instead of 3). Part C: rule 7 enforced in code
+│   │                                          (find_instructions() blocks refunds on tickets containing injected instructions)
+│   ├── data/orders.json            SUBMIT     New orders ORD-1009 (loyalty), ORD-1010, ORD-1011
+│   ├── data/tickets.json           SUBMIT     New tickets T-09 (loyalty), T-10 (hidden P.S. injection), T-11 (fake team lead)
+│   ├── data/policy.md              SUBMIT     Policy text updated for the loyalty rule and the expanded rule 7
+│   ├── _report.py                  SUBMIT     Scoreboard ground truth now also applies rule 7
+│   ├── level1_traditional_automation.py  SUBMIT  Passes the ticket text so rule 7 is checked
+│   ├── level2_ai_automation.py     SUBMIT     Same
+│   ├── level3_ai_agent.py          SUBMIT     Part D: prints total tokens for --all
+│   ├── level4_multi_agent.py       SUBMIT     Part D: token tally per agent role
+│   └── level5_agentic_ai.py        SUBMIT     Bug fix: max_tokens 1024 → 4096 (it silently handled 0/8 tickets before)
+├── tests/test_day1_assignment.py   SUBMIT     10 new tests for the loyalty rule and the injection control (suite: 65/65 OK)
+└── outputs/day1_runs/*.txt         EVIDENCE   Every run, before and after each change, with wall time
+                                               (00_ = baseline, 10/11_ = Part B, 20_ = Part C, 30_ = final Part D, 40_ = token check)
+```
+
+**Result in one line:** Level 2 (fixed workflow plus AI) is recommended: 11/11 correct, cheapest and most predictable.
+Level 5 also scored 11/11 but needs more oversight.
+
+---
+
+## 4. Week 1 / Day 2 – model tiers, embeddings, verification, approved tools
+
+**Assignment:** Part A: compare Opus, Sonnet and Haiku on the same prompts. Part B: compare chat tools and their privacy
+settings, with your own query. Part C: embeddings map with your own topic. Part D: verify model output against the
+source document. Part E: a one-page approved-tools guideline.
+
+```
+week1/day2/
+├── IMPLEMENTATION_DAY2.md          REFERENCE  How Day 2 was done, part by part, and how to re-run it
+├── .env.example                    SUBMIT     API key template (placeholder only)
+├── docs/
+│   ├── Day2_Writeup.pdf            SUBMIT     The write-up: Parts A–E answered (main document)
+│   ├── Day2_Writeup.md             SUBMIT     Editable version
+│   ├── Approved_Tools_Guideline_DRAFT.pdf  SUBMIT  Part E: one-page guideline (DRAFT for Security and Legal)
+│   └── Approved_Tools_Guideline_DRAFT.md   SUBMIT  Editable version
+├── solutions/day2_models_and_embeddings/
+│   ├── verify_outputs.py           SUBMIT     Part D: new checked item, rounding-bug fix, coverage check for uncited clauses,
+│   │                                          failures now written to the audit log
+│   ├── embeddings_map.py           SUBMIT     Part C: bug fix (a 5th topic was silently dropped from the map), --query option
+│   ├── data/sentences.json         SUBMIT     Part C: new topic finance_expenses (8 sentences)
+│   └── data/my_query.txt           SUBMIT     Part B: own synthetic card-terms query with known answers
+├── tests/test_day2.py              SUBMIT     New tests for the verification changes (suite: 63 OK, 3 skipped, 1 expected failure)
+└── outputs/
+    ├── tier_comparison_Q1/Q2/Q3.md SUBMIT     Part A: tier comparison reports
+    ├── tier_comparison_custom.md   SUBMIT     Part B: own query on the three tiers
+    ├── homework_comparison.md      SUBMIT     Part B: chat-tool comparison sheet and privacy settings
+    ├── embedding_map.png           SUBMIT     Part C: the embeddings map
+    ├── verification_audit.jsonl    EVIDENCE   Part D: audit log of the verification runs
+    └── day2_runs/*                 EVIDENCE   Raw output of every run (partA_, partB_, partC_, partD_)
+```
+
+**Gaps in Day 2:** ChatGPT and Gemini were not run (no access), so their columns say "not run". Real embeddings did not
+run because this machine is missing the Microsoft Visual C++ runtime, so the toy embedder was used.
+
+---
+
+## 5. Week 1 / Day 3 – vector mathematics and cosine similarity
+
+**Assignment:** Guided Steps 1–4 (by hand, in code, check, why cosine). Task A: hand working. Task B: build `nearest()`
+with Claude and log the prompts. Task C: your own scenario matrix. Task E: misleading similarity. Stretch tasks.
+
+```
+week1/day3/
+├── IMPLEMENTATION_DAY3.md          REFERENCE  How Day 3 was done, decisions taken, how to re-run
+├── STEP1_HAND_WORKING.md           SUBMIT     Guided Step 1: calculations worked by hand
+├── STEP4_NOTES.md                  SUBMIT     Guided Step 4: notes on why cosine beats distance for text
+├── my_vector_math.py               SUBMIT     Step 2: dot, norm, cosine_similarity, euclidean_distance; Task B: nearest() v2
+├── test_mine.py                    SUBMIT     12 own tests (functions and nearest())
+├── taskE_and_stretch.py            SUBMIT     Task E pairs plus stretch (unit-vector identity, centroid, sensitivity)
+├── data/my_scenario.json           SUBMIT     Task C: KYC document-remediation scenario (6 items × 4 dimensions)
+├── tests/test_vector_math.py       SUBMIT     Small fix so the course test still passes once the functions are written (16/16 OK)
+├── docs/
+│   ├── Day3_Writeup.pdf            SUBMIT     The write-up (main document)
+│   ├── Day3_Writeup.md             SUBMIT     Editable version
+│   ├── TaskA_hand_working.md       SUBMIT     Task A working (typed; the assignment wants a handwritten photo, see below)
+│   ├── TaskB_prompt_log.md         SUBMIT     Task B: prompts sent to Claude and what was accepted or fixed
+│   └── TaskC_scenario.md           SUBMIT     Task C explanation
+└── outputs/*.txt                   EVIDENCE   Output of every step and task run
+```
+
+**Still to do yourself for Day 3:**
+1. Copy `docs/TaskA_hand_working.md` by hand, then add a photo or scan of it.
+2. Replace the generic Task E example with one from your own work.
+
+---
+
+## 6. What is NOT in this repository, and must never be pushed
+
+| Item | Why |
+|---|---|
+| `.env` | Contains the real API key. It stays only on the local machine (git-ignored). |
+| `.venv/`, `__pycache__/` | Local environment, rebuilt with `pip install -r requirements.txt` |
+| Unchanged course files | They belong to the trainer's repos; clone those instead |
+| `outputs/submission/*.zip`, `submission/*.zip` | Zips of exactly what is in each day folder; redundant in git |
+
+---
+
+## 7. What to push to GitLab later
+
+**Rule:** push the whole `week1/dayN/` folder: everything labelled SUBMIT and EVIDENCE. The REFERENCE files
+(`IMPLEMENTATION_DAYn.md`) are for our understanding. Pushing them is fine, but if GitLab should contain only the
+deliverables, leave them out.
+
+### Option A – push the homework files only (recommended)
+
+```bash
+# 1. Get the homework from this GitHub repo
+git clone https://github.com/ashok5451chicha/genaiops_training.git
+
+# 2. Clone the GitLab repo you were given (replace the URL)
+git clone <your-gitlab-repo-url> gitlab_repo
+
+# 3. Copy the week/day folders across
+cp -r genaiops_training/week1 gitlab_repo/
+# optional: leave out the reference notes
+# rm gitlab_repo/week1/day*/IMPLEMENTATION_DAY*.md
+
+# 4. Check that no key is included, then push
+cd gitlab_repo
+grep -rE "sk-ant-[A-Za-z0-9_-]{20,}" . --exclude-dir=.git   # must print nothing
+git add week1
+git commit -m "Week 1 homework: day 1-3"
+git push
+```
+
+### Option B – the GitLab repo must contain the full runnable project
+
+If the trainer wants the full course code with your changes on top:
+
+```bash
+# Day 1 (Day 2 is the same course repo: repeat with day2)
+git clone https://github.com/digibhatia/automation-to-agentic-spectrum.git day1
+cp -r genaiops_training/week1/day1/. day1/          # overlay the homework files
+# Day 3
+git clone https://github.com/digibhatia/cosine-vector-mathematics.git day3
+cp -r genaiops_training/week1/day3/. day3/
+```
+
+Then point each folder at GitLab (`git remote set-url origin <gitlab-url>`), commit and push. To check before
+pushing: `python -m unittest discover -s tests` should pass in each folder (it needs a `.env` with your key for the
+live runs, never committed).
+
+### Checklist before any GitLab push
+
+- [ ] No `.env` file and no real `sk-ant-…` key (run the `grep` above)
+- [ ] Day 3: handwritten photo for Task A added
+- [ ] Day 3: personal example for Task E added
+- [ ] Day 1 Part A: replace the assumed process (retail-bank complaint handling) if yours is different
