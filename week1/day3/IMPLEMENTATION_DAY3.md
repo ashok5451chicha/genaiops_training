@@ -40,8 +40,8 @@ committed or pushed.** No API key is needed or used in this lab. Write-up: `docs
 ## Needs you
 
 * Task A asks for a **photo or scan of handwritten working**: copy `docs/TaskA_hand_working.md` by hand.
-* Task E asks for an example **from your own work**: the write-up has a generic complaints-queue example marked
-  "to personalise".
+* Task E's own-work example is a GenAI-operations case (a RAG assistant retrieving an old policy clause with the
+  opposite meaning). Replace it if you have a better one from your own work.
 
 ## Reproduce
 

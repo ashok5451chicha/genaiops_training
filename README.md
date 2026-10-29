@@ -168,7 +168,7 @@ week1/day3/
 
 **Still to do yourself for Day 3:**
 1. Copy `docs/TaskA_hand_working.md` by hand, then add a photo or scan of it.
-2. Replace the generic Task E example with one from your own work.
+2. Task E now has an own-work example (GenAI operations: RAG assistant retrieving an old policy clause with the opposite meaning). Replace it if you have a better one.
 
 ---
 
@@ -232,5 +232,5 @@ live runs, never committed).
 
 - [ ] No `.env` file and no real `sk-ant-…` key (run the `grep` above)
 - [ ] Day 3: handwritten photo for Task A added
-- [ ] Day 3: personal example for Task E added
+- [x] Day 3: own-work example for Task E added (GenAI operations case)
 - [ ] Day 1 Part A: replace the assumed process (retail-bank complaint handling) if yours is different

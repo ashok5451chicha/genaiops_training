@@ -11,7 +11,7 @@ Repository: `cosine-vector-mathematics` (local clone in `training/week1/day3`).
 | ☑ Task B: `nearest()`, tests, prompt log, one real issue found | 12/12 own tests, Step 3 still 4/4 |
 | ☑ Task C: scenario table, predictions, result | Use case #1 KYC document remediation |
 | ☑ Task D: decision cases | Table below |
-| ☑ Task E: misleading high score and own explanation | Below (*personal work example to be added*) |
+| ☑ Task E: misleading high score and own explanation | Below, including an example from GenAI operations work |
 | ☑ Stretch: identity, centroid, sensitivity | `taskE_and_stretch.py` |
 | ☑ All data synthetic, nothing sensitive, no keys, no `.env` | |
 
@@ -106,10 +106,14 @@ used in similar ways, about the same things, end up with similar lists of number
 dials in my toy vectors: how much "lending", how much "fraud". The direction the arrow points summarises the mix of
 topics. Two texts whose arrows point the same way have the same mix, so we treat them as meaning roughly the same
 thing. Cosine measures that angle and ignores how long the arrow is, which is mostly how long or wordy the text was.
-*Example from my own work (to personalise):* in a complaints queue, "my card payment was taken twice" and "duplicate
-debit on my account" share almost no words, but they describe the same problem, so their vectors point the same way
-and a search for one finds the other. "Payment was **not** taken twice" would land right next to them too, which is
-exactly why a person, or an exact rule, still has to read the result.
+*Example from my own work (GenAI operations):* when we put a retrieval (RAG) assistant over internal policy
+documents, the question "Can a refund above 100.00 be approved without a manager?" retrieved the clause "Refunds
+above 100.00 **must** be approved by a manager" as its top match. That was correct. But a clause from an older draft,
+"Refunds above 100.00 **do not** need manager approval", scored almost as high (both cosine scores around 0.9),
+because both clauses are about the same thing: refunds, an amount and manager approval. Two near-identical vectors
+gave opposite answers. The fixes we apply are to retrieve from the approved version only (a metadata filter, not
+similarity), to show the source clause next to the answer, and to send any answer about limits or approvals to an
+exact check against the policy table before anyone acts on it.
 
 ## Stretch tasks
 
