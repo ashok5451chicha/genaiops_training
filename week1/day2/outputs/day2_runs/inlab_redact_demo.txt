@@ -1,0 +1,5 @@
+ORIGINAL : Customer Asha Rao (asha.rao@example.com, +91 98765 43210) says card 4111 1111 1111 1111 was charged for ORD-1001. DOB 1990-04-12.
+REDACTED : Customer Asha Rao ([EMAIL], [PHONE]) says card [CARD] was charged for [ORDER_ID]. DOB [DOB].
+FOUND    : {'EMAIL': 1, 'CARD': 1, 'DOB': 1, 'PHONE': 1, 'ORDER_ID': 1}
+
+Note: the NAME 'Asha Rao' was NOT caught. Patterns cannot find names - a person must check.

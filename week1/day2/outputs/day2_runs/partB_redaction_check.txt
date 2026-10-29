@@ -1,0 +1,51 @@
+ORIGINAL : You are helping a card-servicing analyst. Using ONLY the terms below, answer:
+1. A Platinum cardholder spent 8,400.00 on the card this year. Is the annual fee charged, and how much is it?
+2. The cardholder withdraws 60.00 in cash. What cash-advance fee is charged? Show the calculation.
+3. The cardholder makes a purchase of 400.00 in euros. What non-sterling fee applies?
+Keep the answer under 120 words.
+
+<terms>
+CARD TERMS - EXTRACT (fictional, for training use)
+
+3.1 Annual fee. The Platinum card has an annual fee of 180.00. The fee is waived for any card year in which
+the cardholder spends at least 9,000.00 on purchases.
+
+3.2 Non-sterling transactions. Purchases made in a currency other than GBP incur a non-sterling transaction
+fee of 2.75% of the transaction value.
+
+3.3 Late payment. If the minimum payment is not received by the due date, a late fee of 12.00 is charged.
+No more than one late fee is charged per statement.
+
+3.4 Cash advances. Cash withdrawals incur a fee of 3% of the amount withdrawn, subject to a minimum fee of
+3.00. Interest is charged from the date of the withdrawal.
+
+5.2 Disputes. A disputed transaction must be reported within 120 days of the transaction date.
+</terms>
+
+REDACTED : You are helping a card-servicing analyst. Using ONLY the terms below, answer:
+1. A Platinum cardholder spent 8,400.00 on the card this year. Is the annual fee charged, and how much is it?
+2. The cardholder withdraws 60.00 in cash. What cash-advance fee is charged? Show the calculation.
+3. The cardholder makes a purchase of 400.00 in euros. What non-sterling fee applies?
+Keep the answer under 120 words.
+
+<terms>
+CARD TERMS - EXTRACT (fictional, for training use)
+
+3.1 Annual fee. The Platinum card has an annual fee of 180.00. The fee is waived for any card year in which
+the cardholder spends at least 9,000.00 on purchases.
+
+3.2 Non-sterling transactions. Purchases made in a currency other than GBP incur a non-sterling transaction
+fee of 2.75% of the transaction value.
+
+3.3 Late payment. If the minimum payment is not received by the due date, a late fee of 12.00 is charged.
+No more than one late fee is charged per statement.
+
+3.4 Cash advances. Cash withdrawals incur a fee of 3% of the amount withdrawn, subject to a minimum fee of
+3.00. Interest is charged from the date of the withdrawal.
+
+5.2 Disputes. A disputed transaction must be reported within 120 days of the transaction date.
+</terms>
+
+FOUND    : nothing recognised
+
+Reminder: names and free-text details are NOT detected. Read the result yourself before sharing.

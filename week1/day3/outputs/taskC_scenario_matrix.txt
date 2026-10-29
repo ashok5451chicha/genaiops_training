@@ -1,0 +1,23 @@
+Dimensions: ['identity_proof', 'address_proof', 'income_proof', 'data_quality_issue']
+
+COSINE SIMILARITY (1 = same direction)
+                           1      2      3      4      5      6
+1. Passport scan        1.00   0.38   0.23   0.61   0.47   0.14
+2. Utility bill         0.38   1.00   0.23   0.12   0.47   0.69
+3. Salary slip          0.23   0.23   1.00   0.12   0.35   0.14
+4. Blurred ID scan      0.61   0.12   0.12   1.00   0.87   0.55
+5. Missing field        0.47   0.47   0.35   0.87   1.00   0.85
+6. Conflicting address   0.14   0.69   0.14   0.55   0.85   1.00
+
+EUCLIDEAN DISTANCE (0 = identical)
+                           1      2      3      4      5      6
+1. Passport scan        0.00   5.66   6.40   5.20   5.20   7.07
+2. Utility bill         5.66   0.00   6.40   7.68   5.20   4.24
+3. Salary slip          6.40   6.40   0.00   7.75   5.83   7.14
+4. Blurred ID scan      5.20   7.68   7.75   0.00   3.16   5.74
+5. Missing field        5.20   5.20   5.83   3.16   0.00   3.00
+6. Conflicting address   7.07   4.24   7.14   5.74   3.00   0.00
+
+Most similar pair  : Blurred ID scan  <->  Missing field   (cosine 0.87)
+Least similar pair : Salary slip  <->  Blurred ID scan   (cosine 0.12)
+Was this what you predicted? If not, which of your numbers surprised you?

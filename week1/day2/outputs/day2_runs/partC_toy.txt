@@ -1,0 +1,41 @@
+Embedder: toy lexicon embedder (6-d)
+Embedding 24 sentences ...
+Each sentence became a vector of 6 numbers.
+
+QUERY: Reimburse me for the defective goods
+  1. sim= 0.90  shared words=1  [refunds] I would like my money returned because the item arrived broken.
+  2. sim= 0.88  shared words=2  [refunds] Credit the amount back to my account for the faulty product.
+  3. sim= 0.86  shared words=1  [finance_expenses] The corporate card statement must be reconciled by the end of the month.
+
+QUERY: I can't sign into my profile
+  1. sim= 1.00  shared words=3  [it_access] I forgot my password and cannot sign in to the portal.
+  2. sim= 1.00  shared words=0  [it_access] Please grant me access to the shared project folder.
+  3. sim= 0.99  shared words=1  [it_access] The two-factor code is not working on my new phone.
+
+QUERY: How much vacation am I entitled to?
+  1. sim= 0.98  shared words=0  [finance_expenses] Who signs off expense claims when my line manager is on holiday?
+  2. sim= 0.97  shared words=1  [hr_leave] What is the process to report a sick day to my manager?
+  3. sim= 0.97  shared words=2  [hr_leave] I need to book a holiday for the first week of December.
+
+QUERY: How do I get reimbursed for a train ticket from a work trip?
+  1. sim= 0.86  shared words=0  [finance_expenses] Attach an itemised receipt to every meal expense over twenty pounds.
+  2. sim= 0.84  shared words=0  [finance_expenses] Submit your taxi receipts through the expenses portal within 30 days.
+  3. sim= 0.83  shared words=1  [finance_expenses] My mileage claim for the branch visit has not been approved yet.
+
+QUERY: Where do I upload receipts for my expense claim?
+  1. sim= 0.72  shared words=3  [finance_expenses] My mileage claim for the branch visit has not been approved yet.
+  2. sim= 0.60  shared words=1  [finance_expenses] Attach an itemised receipt to every meal expense over twenty pounds.
+  3. sim= 0.52  shared words=0  [finance_expenses] Personal items bought on the company card must be paid back.
+
+Look at 'shared words': the best matches share few or no words with the query - that is semantic search.
+(The toy embedder is coarse, so ties at 1.00 are expected; a real model gives finer scores.)
+
+Toy vector for the first sentence, by concept:
+  money     0.80  ################
+  delivery  0.44  #########
+  damage    0.40  ########
+  access    0.05  #
+  leave     0.00  
+  security  0.05  #
+
+Map saved: C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week1\day2\outputs\embedding_map.png  (sentences on the same topic should cluster)

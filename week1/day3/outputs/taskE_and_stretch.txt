@@ -1,0 +1,29 @@
+TASK E - close vectors, opposite meaning
+  [KYC scenario] dims=['identity_proof', 'address_proof', 'income_proof', 'data_quality_issue']
+    Address matches records         [0, 5, 0, 2]
+    Address does NOT match records  [0, 5, 0, 3]
+    cosine = 0.987   distance = 1.000
+  [toy lending space] dims=['lending', 'fraud_risk', 'kyc_compliance', 'customer_service']
+    Approve the loan                [5, 1, 2, 2]
+    Decline the loan                [5, 2, 2, 2]
+    cosine = 0.987   distance = 1.000
+
+STRETCH 1 - on unit vectors, distance^2 = 2 - 2 x cosine  (Blurred ID scan vs Missing field)
+  lengths after normalising: 1.0000, 1.0000
+  cosine = 0.8746   distance^2 (unit) = 0.2509   2 - 2 x cosine = 0.2509   equal: True
+
+STRETCH 2 - centroids (the idea behind a drift check)
+  last month centre : [2.33, 2.33, 1.67, 0.0]
+  this month centre : [2.0, 2.0, 0.33, 4.33]
+  cosine between centres = 0.516   distance = 4.558
+  The data_quality dimension moved from 0 to 4.33: the mix of work has shifted towards remediation.
+
+STRETCH 3 - change one number of 'Utility bill' by +/-1 or 2 (vs Conflicting address, base cosine 0.693)
+  dimension                 -2      -1      +1      +2
+  identity_proof           n/a  +0.014  -0.037  -0.087
+  address_proof         -0.023  -0.007     n/a     n/a
+  income_proof             n/a     n/a  -0.013  -0.048
+  data_quality_issue       n/a     n/a  +0.123  +0.210
+  Biggest move: data_quality (+0.21 for +2), where Conflicting address is large (4) and Utility bill is 0.
+  Raising a dimension the other item scores 0 on (identity, income) only lengthens the vector: cosine drops.
+  So a dimension's weight depends on the OTHER vector: raising a number helps most where the OTHER item is large.

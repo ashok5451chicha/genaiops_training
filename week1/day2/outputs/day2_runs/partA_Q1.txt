@@ -1,0 +1,14 @@
+Query Q1: Contract clause analysis (reasoning + arithmetic + careful reading)
+
+Running opus ...
+Running sonnet ...
+Running haiku ...
+
+tier    ok     secs    cost $   in/out tokens  key numbers       served by
+------------------------------------------------------------------------------------------
+opus    yes    18.9    1.3117           2/426  2/2 key numbers   claude-haiku-5-5, claude-opus-5-5
+sonnet  yes     5.9    0.6626           2/292  2/2 key numbers   claude-haiku-5-5, claude-sonnet-5-5
+haiku   yes     4.3    0.1668           2/369  2/2 key numbers   claude-haiku-5-5
+
+Report saved: C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week1\day2\outputs\tier_comparison_Q1.md
+Discuss: Is the most expensive tier always worth it? Which tier would you use for this task in production?

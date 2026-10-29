@@ -1,0 +1,30 @@
+LEVEL 3 - AI agent (model picks its own tool calls)
+
+=== T-01: My headphones (ORD-1001) arrived almost two weeks after the date you promised. I would lik...
+  -> calls  lookup_order: {"order_id": "ORD-1001"}
+  <- result lookup_order: {"order_id": "ORD-1001", "customer_email": "asha.rao@example.com", "item": "Wireless headphones", "amount": 79.0, "status": "delivered", "ordered": "2026-09-...
+  -> calls  get_policy: {}
+  <- result get_policy: {"policy": "# Refund policy (fictional retailer, lab use only)\n\nRules the support team follows. The agent tools in this lab enforce them in code.\n\n1. **L...
+  -> calls  issue_refund: {"ticket_id": "T-01", "order_id": "ORD-1001", "amount": 79.0, "reason": "Late delivery: promised 2026-09-27, delivered 2026-10-09 (12 days late, over the 3-d...
+  <- result issue_refund: {"status": "refunded", "amount": 79.0, "budget_remaining": 221.0}
+  -> calls  draft_reply: {"ticket_id": "T-01", "message": "Hi Asha,\n\nThank you for contacting us, and sorry your headphones (ORD-1001) arrived late. We promised them for 27 Septemb...
+  <- result draft_reply: {"status": "draft_saved"}
+  agent says: I refunded the full $79.00 for ORD-1001 and saved a reply to Asha for someone to review and send.
+
+The policy clearly allowed the refund:
+- **Late delivery:** The order was promised for 2026-09-27 and
+  (tokens in/out: 7607/821, stopped: end_turn)
+
+ticket  expected          actual            match
+--------------------------------------------------
+T-01    refunded          refunded          yes
+--------------------------------------------------
+1/1 tickets handled as the policy expects
+Refunds paid: 79.00   waiting for human approval: 0.00
+
+Blocked attempts (guardrails at work) are in the audit trail:
+
+Takeaway: the agent adapts to each ticket. One agent doing everything is hard to check, though.
+Level 4 splits the job between specialist agents who check each other.
+
+WALL_TIME_S=0.0

@@ -1,0 +1,20 @@
+[
+  {
+    "model": "claude-sonnet-5-5",
+    "seconds": 3.7,
+    "words": 160,
+    "stop": "end_turn",
+    "in": 476,
+    "out": 362,
+    "answer": "**1. Service credit**\n- Availability of 98.6% is 0.9 percentage points below 99.5%.\n- Only full 0.5-point steps count, so that is 1 step (0.9 \u00f7 0.5 = 1.8, rounded down).\n- Credit = 5% \u00d7 12,400.00 = **620.00** (clause 7.1; the 20% cap is not reached).\n\n**2. Early-termination charge**\n- Termination after 8 months falls within the first 12 months (clause 9.2).\n- Charge = two months' fees = 2 \u00d7 12,400.00 = **24,800.00**.\n- Clause 9.2 requires 90 days' written notice. The clauses don't say whether fees during the notice period are payable in addition to this charge, and I have not assumed they are.\n\n**3. Processing data in India**\n- **No.** Clause 11.4 says: \"Customer personal data shall be processed only within the European Economic Area unless the Customer gives prior written consent.\"\n- The Supplier needs the Customer's prior written consent first.\n- The clause covers personal data only. It says nothing about other customer data."
+  },
+  {
+    "model": "claude-opus-5-5",
+    "seconds": 5.4,
+    "words": 141,
+    "stop": "end_turn",
+    "in": 476,
+    "out": 492,
+    "answer": "**1. Service credit (Clause 7.1)**\n- Shortfall: 99.5% \u2212 98.6% = 0.9 percentage points\n- Full 0.5-point steps: 1 (the remaining 0.4 does not count)\n- Credit: 1 \u00d7 5% \u00d7 12,400.00 = **620.00**\n- This is below the 20% cap (2,480.00).\n\n**2. Early-termination charge (Clause 9.2)**\n- Termination at 8 months falls within the first 12 months.\n- Charge: 2 \u00d7 12,400.00 = **24,800.00**\n- The 90-day notice requirement still applies. The extract doesn't say whether fees during the notice period are payable in addition.\n\n**3. Processing data in India (Clause 11.4)**\n**No.** India is outside the EEA, so the Supplier needs the Customer's prior written consent:\n> \"Customer personal data shall be processed only within the European Economic Area unless the Customer gives prior written consent.\"\n\n*Note: The extract doesn't specify a currency, so amounts are shown without one.*"
+  }
+]

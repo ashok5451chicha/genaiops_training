@@ -1,0 +1,12 @@
+{
+  "_note": "Synthetic. Scenario 1 - KYC document remediation assistant. Each number (0-5) says how strongly the item relates to the dimension.",
+  "dimensions": ["identity_proof", "address_proof", "income_proof", "data_quality_issue"],
+  "items": {
+    "Passport scan":        [5, 1, 0, 0],
+    "Utility bill":         [1, 5, 0, 0],
+    "Salary slip":          [1, 1, 5, 0],
+    "Blurred ID scan":      [4, 0, 0, 5],
+    "Missing field":        [2, 2, 1, 4],
+    "Conflicting address":  [0, 4, 0, 4]
+  }
+}

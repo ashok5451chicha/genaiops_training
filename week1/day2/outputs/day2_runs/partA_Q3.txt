@@ -1,0 +1,14 @@
+Query Q3: Judgement
+
+Running opus ...
+Running sonnet ...
+Running haiku ...
+
+tier    ok     secs    cost $   in/out tokens  key numbers       served by
+------------------------------------------------------------------------------------------
+opus    yes     5.8    0.0622           2/208  n/a               claude-haiku-5-5, claude-opus-5-5
+sonnet  yes     4.2    0.0311           2/199  n/a               claude-haiku-5-5, claude-sonnet-5-5
+haiku   yes     4.4    0.1252           2/414  n/a               claude-haiku-5-5
+
+Report saved: C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week1\day2\outputs\tier_comparison_Q3.md
+Discuss: Is the most expensive tier always worth it? Which tier would you use for this task in production?

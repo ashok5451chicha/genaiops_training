@@ -1,0 +1,56 @@
+.....F....FFFF
+======================================================================
+FAIL: test_cosine_full_order (test_mine.Nearest.test_cosine_full_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week1\day3\test_mine.py", line 50, in test_cosine_full_order
+    self.assertEqual(m.nearest(WORDS["loan"], {k: v for k, v in WORDS.items() if k != "loan"}),
+AssertionError: Lists differ: ['mortgage', 'overdraft', 'KYC', 'complaint', 'fraud'] != ['mortgage', 'overdraft', 'KYC', 'fraud', 'complaint']
+
+First differing element 3:
+'complaint'
+'fraud'
+
+- ['mortgage', 'overdraft', 'KYC', 'complaint', 'fraud']
+?                                             ---------
+
++ ['mortgage', 'overdraft', 'KYC', 'fraud', 'complaint']
+?                                 +++++++++
+
+
+======================================================================
+FAIL: test_unknown_metric_is_rejected (test_mine.Nearest.test_unknown_metric_is_rejected) [Cosine]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week1\day3\test_mine.py", line 73, in test_unknown_metric_is_rejected
+    with self.subTest(bad), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unknown_metric_is_rejected (test_mine.Nearest.test_unknown_metric_is_rejected) [manhattan]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week1\day3\test_mine.py", line 73, in test_unknown_metric_is_rejected
+    with self.subTest(bad), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unknown_metric_is_rejected (test_mine.Nearest.test_unknown_metric_is_rejected) [euclidian]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week1\day3\test_mine.py", line 73, in test_unknown_metric_is_rejected
+    with self.subTest(bad), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_zero_vector_candidate_names_the_culprit (test_mine.Nearest.test_zero_vector_candidate_names_the_culprit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week1\day3\test_mine.py", line 79, in test_zero_vector_candidate_names_the_culprit
+    self.assertIn("empty profile", str(ctx.exception))
+AssertionError: 'empty profile' not found in 'cosine similarity is undefined for a zero vector'
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.003s
+
+FAILED (failures=5)

@@ -1,0 +1,9 @@
+{"time": "2026-10-29T04:29:56+00:00", "source": "offline-demo", "tier": "HIGH", "failed_items": ["credit_cap_percent", "credit_for_98_6"], "uncited_clauses": []}
+{"time": "2026-10-29T04:30:05+00:00", "source": "offline-demo", "tier": "HIGH", "failed_items": ["credit_cap_percent", "credit_for_98_6"], "uncited_clauses": []}
+{"time": "2026-10-29T04:30:45+00:00", "source": "claude-sonnet-5-5", "tier": "LOW", "failed_items": [], "uncited_clauses": []}
+{"time": "2026-10-29T04:30:52+00:00", "source": "claude-sonnet-5-5", "tier": "LOW", "failed_items": [], "uncited_clauses": []}
+{"time": "2026-10-29T04:35:31+00:00", "source": "claude-sonnet-5-5", "tier": "LOW", "failed_items": [], "uncited_clauses": []}
+{"time": "2026-10-29T04:35:41+00:00", "source": "claude-sonnet-5-5", "tier": "HIGH", "failed_items": [], "uncited_clauses": []}
+{"time": "2026-10-29T04:35:58+00:00", "source": "claude-sonnet-5-5", "tier": "LOW", "failed_items": [], "uncited_clauses": []}
+{"time": "2026-10-29T04:36:07+00:00", "source": "claude-sonnet-5-5", "tier": "LOW", "failed_items": [], "uncited_clauses": []}
+{"time": "2026-10-29T04:36:15+00:00", "source": "claude-sonnet-5-5", "tier": "LOW", "failed_items": [], "uncited_clauses": []}
