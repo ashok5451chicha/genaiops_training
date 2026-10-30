@@ -190,8 +190,7 @@ capstone-1/
 │   └── test_questions.json    8 test questions, 6 stress questions, 2 out-of-scope
 ├── docs/
 │   ├── architecture.png       architecture diagram
-│   ├── make_diagram.py        redraws the diagram (needs matplotlib)
-│   └── WALKTHROUGH.md         script for the 8-minute trainer walkthrough
+│   └── make_diagram.py        redraws the diagram (needs matplotlib)
 ├── results/
 │   ├── test_results.md        full evaluation tables
 │   ├── crosscheck.txt         library cross-check output
