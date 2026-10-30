@@ -1,0 +1,60 @@
+$ python run_pipeline.py   (after masking fix; classify/duplicate logic NOT yet fixed)
+Loaded 20 synthetic KYC records, 5 remediation categories
+
+REMEDIATION QUEUE (sorted by priority, then score)
+
+record_id  customer_ref  masked_id    category       score  priority  expected        
+---------  ------------  -----------  -------------  -----  --------  ----------------
+K001       CUST-1001     SYNID-**213  MANUAL_REVIEW  0.011  HIGH      PROOF_OF_ADDRESS
+K002       CUST-1002     SYNID-**120  MANUAL_REVIEW  0.0    HIGH      ID_MISMATCH     
+K003       CUST-1003     SYNID-**911  MANUAL_REVIEW  0.0    HIGH      SOURCE_OF_FUNDS 
+K004       CUST-1004     SYNID-**403  MANUAL_REVIEW  0.0    HIGH      HIGH_RISK_REVIEW
+K005       CUST-1005     SYNID-**234  MANUAL_REVIEW  0.0    HIGH      PERIODIC_REFRESH
+K006       CUST-1006     SYNID-**310  MANUAL_REVIEW  0.0    HIGH      PROOF_OF_ADDRESS
+K007       CUST-1007     SYNID-**987  MANUAL_REVIEW  0.0    HIGH      ID_MISMATCH     
+K008       CUST-1008     SYNID-**456  MANUAL_REVIEW  0.0    HIGH      SOURCE_OF_FUNDS 
+K009       CUST-1009     SYNID-**765  MANUAL_REVIEW  0.0    HIGH      HIGH_RISK_REVIEW
+K010       CUST-1010     SYNID-**874  MANUAL_REVIEW  0.0    HIGH      PERIODIC_REFRESH
+K011       CUST-1011     SYNID-**098  MANUAL_REVIEW  0.0    HIGH      PROOF_OF_ADDRESS
+K012       CUST-1012     SYNID-**321  MANUAL_REVIEW  0.0    HIGH      HIGH_RISK_REVIEW
+K013       CUST-1013     SYNID-**456  MANUAL_REVIEW  0.0    HIGH      ID_MISMATCH     
+K013       CUST-1014     SYNID-**547  MANUAL_REVIEW  0.0    HIGH      SOURCE_OF_FUNDS 
+K015       CUST-1015     SYNID-**023  MANUAL_REVIEW  0.0    HIGH      PERIODIC_REFRESH
+K016       CUST-1016     SYNID-**987  MANUAL_REVIEW  0.0    HIGH      HIGH_RISK_REVIEW
+K017       CUST-1017     SYNID-**911  MANUAL_REVIEW  0.0    HIGH      SOURCE_OF_FUNDS 
+K018       CUST-1018     SYNID-**213  MANUAL_REVIEW  0.0    HIGH      PROOF_OF_ADDRESS
+K019       CUST-1019     SYNID-**120  MANUAL_REVIEW  0.0    HIGH      ID_MISMATCH     
+K020       CUST-1020     SYNID-**102  MANUAL_REVIEW  0.0    HIGH      MANUAL_REVIEW   
+
+DUPLICATE CANDIDATES (human review only - nothing is merged)
+
+record_a  record_b  cosine  euclidean  decision                       
+--------  --------  ------  ---------  -------------------------------
+K001      K001      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K002      K002      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K003      K003      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K004      K004      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K005      K005      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K006      K006      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K007      K007      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K008      K008      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K009      K009      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K010      K010      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K011      K011      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K012      K012      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K013      K013      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K013      K013      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K015      K015      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K016      K016      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K017      K017      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K018      K018      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K019      K019      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K020      K020      1.0     0.0        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K003      K017      0.976   0.5        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K001      K018      0.964   0.5        PROBABLE_DUPLICATE_HUMAN_REVIEW
+
+Classification: 1/20 correct (accuracy 0.05)
+Duplicates: precision 0.095, recall 0.667, recall incl. possible 0.667 (TP 2, FP 19, missed 1)
+
+Wrote: output\remediation_queue.csv, output\duplicate_pairs.csv, output\summary.md
+Privacy check: no raw ID number on screen or in any output file.

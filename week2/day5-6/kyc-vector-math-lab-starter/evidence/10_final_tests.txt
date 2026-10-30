@@ -1,0 +1,52 @@
+$ python -m unittest discover -s tests -v
+test_case_does_not_matter (test_embedder.EmbedderTests.test_case_does_not_matter) ... ok
+test_empty_text_is_zero_vector (test_embedder.EmbedderTests.test_empty_text_is_zero_vector) ... ok
+test_stopwords_dropped (test_embedder.EmbedderTests.test_stopwords_dropped) ... ok
+test_empty_note_goes_to_manual_review (test_pipeline.ClassifyNote.test_empty_note_goes_to_manual_review) ... ok
+test_highest_cosine_wins (test_pipeline.ClassifyNote.test_highest_cosine_wins) ... ok
+test_score_is_between_0_and_1 (test_pipeline.ClassifyNote.test_score_is_between_0_and_1) ... ok
+test_weak_note_goes_to_manual_review (test_pipeline.ClassifyNote.test_weak_note_goes_to_manual_review) ... ok
+test_config_thresholds_are_consistent (test_pipeline.DataHygiene.test_config_thresholds_are_consistent) ... ok
+test_customer_refs_unique (test_pipeline.DataHygiene.test_customer_refs_unique) ... ok
+test_dates_are_iso_and_not_in_the_future (test_pipeline.DataHygiene.test_dates_are_iso_and_not_in_the_future) ... ok
+test_expected_categories_exist (test_pipeline.DataHygiene.test_expected_categories_exist) ... ok
+test_gold_pairs_refer_to_real_records (test_pipeline.DataHygiene.test_gold_pairs_refer_to_real_records) ... ok
+test_ids_are_synthetic (test_pipeline.DataHygiene.test_ids_are_synthetic) ... ok
+test_record_ids_unique (test_pipeline.DataHygiene.test_record_ids_unique) ... ok
+test_status_values (test_pipeline.DataHygiene.test_status_values) ... ok
+test_classification_accuracy (test_pipeline.EndToEndQuality.test_classification_accuracy) ... ok
+test_every_known_duplicate_reaches_a_human (test_pipeline.EndToEndQuality.test_every_known_duplicate_reaches_a_human) ... ok
+test_no_false_probable_duplicates (test_pipeline.EndToEndQuality.test_no_false_probable_duplicates) ... ok
+test_queue_ids_are_masked (test_pipeline.EndToEndQuality.test_queue_ids_are_masked) ... ok
+test_queue_is_sorted_by_priority (test_pipeline.EndToEndQuality.test_queue_is_sorted_by_priority) ... ok
+test_run_pipeline_writes_three_files_without_raw_ids (test_pipeline.EndToEndQuality.test_run_pipeline_writes_three_files_without_raw_ids) ... ok
+test_write_csv_round_trip (test_pipeline.EndToEndQuality.test_write_csv_round_trip) ... ok
+test_a_record_is_never_its_own_duplicate (test_pipeline.FindDuplicates.test_a_record_is_never_its_own_duplicate) ... ok
+test_decisions_follow_thresholds_and_always_need_a_human (test_pipeline.FindDuplicates.test_decisions_follow_thresholds_and_always_need_a_human) ... ok
+test_every_pair_reported_once (test_pipeline.FindDuplicates.test_every_pair_reported_once) ... ok
+test_identical_profiles_score_one (test_pipeline.FindDuplicates.test_identical_profiles_score_one) ... ok
+test_sorted_by_cosine (test_pipeline.FindDuplicates.test_sorted_by_cosine) ... ok
+test_empty (test_pipeline.MaskId.test_empty) ... ok
+test_keeps_prefix_and_last_three (test_pipeline.MaskId.test_keeps_prefix_and_last_three) ... ok
+test_no_prefix (test_pipeline.MaskId.test_no_prefix) ... ok
+test_raw_digits_never_survive (test_pipeline.MaskId.test_raw_digits_never_survive) ... ok
+test_short_number_fully_masked (test_pipeline.MaskId.test_short_number_fully_masked) ... ok
+test_visible_count_is_respected (test_pipeline.MaskId.test_visible_count_is_respected) ... ok
+test_brief_example (test_vector_math.VectorMathTests.test_brief_example) ... ok
+test_cosine_known_value (test_vector_math.VectorMathTests.test_cosine_known_value) ... ok
+test_cosine_never_above_one (test_vector_math.VectorMathTests.test_cosine_never_above_one) ... ok
+test_cosine_right_angle (test_vector_math.VectorMathTests.test_cosine_right_angle) ... ok
+test_cosine_same_direction (test_vector_math.VectorMathTests.test_cosine_same_direction) ... ok
+test_different_lengths_are_an_error (test_vector_math.VectorMathTests.test_different_lengths_are_an_error) ... ok
+test_distance_unit_vector_identity (test_vector_math.VectorMathTests.test_distance_unit_vector_identity) ... ok
+test_dot (test_vector_math.VectorMathTests.test_dot) ... ok
+test_euclidean_345 (test_vector_math.VectorMathTests.test_euclidean_345) ... ok
+test_euclidean_is_not_manhattan (test_vector_math.VectorMathTests.test_euclidean_is_not_manhattan) ... ok
+test_norm (test_vector_math.VectorMathTests.test_norm) ... ok
+test_normalize_has_length_one (test_vector_math.VectorMathTests.test_normalize_has_length_one) ... ok
+test_zero_vector_is_an_error (test_vector_math.VectorMathTests.test_zero_vector_is_an_error) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 0.068s
+
+OK

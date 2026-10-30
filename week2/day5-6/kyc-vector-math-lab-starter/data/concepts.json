@@ -1,0 +1,113 @@
+{
+ "id_document": [
+  "passport",
+  "aadhaar",
+  "identity",
+  "id",
+  "licence",
+  "license",
+  "photo",
+  "document",
+  "card"
+ ],
+ "name_mismatch": [
+  "mismatch",
+  "mismatched",
+  "differs",
+  "different",
+  "spelling",
+  "initials",
+  "variation",
+  "discrepancy",
+  "conflict",
+  "inconsistent"
+ ],
+ "address_proof": [
+  "address",
+  "residence",
+  "residential",
+  "utility",
+  "bill",
+  "rent",
+  "rental",
+  "lease"
+ ],
+ "stale_expired": [
+  "expired",
+  "outdated",
+  "old",
+  "stale",
+  "lapsed",
+  "validity",
+  "renewal"
+ ],
+ "missing_absent": [
+  "missing",
+  "absent",
+  "absence",
+  "pending",
+  "awaited",
+  "unavailable",
+  "lacking"
+ ],
+ "funds_source": [
+  "income",
+  "salary",
+  "funds",
+  "source",
+  "deposits",
+  "deposit",
+  "earnings",
+  "wealth",
+  "origin"
+ ],
+ "unexplained": [
+  "unexplained",
+  "unclear",
+  "unknown",
+  "unsupported",
+  "unverified",
+  "unusual"
+ ],
+ "pep_high_risk": [
+  "political",
+  "politically",
+  "exposed",
+  "minister",
+  "official",
+  "pep",
+  "sanction",
+  "adverse"
+ ],
+ "cash_business": [
+  "cash",
+  "trader",
+  "jeweller",
+  "dealer",
+  "intensive"
+ ],
+ "offshore": [
+  "offshore",
+  "overseas",
+  "foreign",
+  "abroad",
+  "international",
+  "remittance"
+ ],
+ "dormant_refresh": [
+  "dormant",
+  "inactive",
+  "refresh",
+  "periodic",
+  "review",
+  "due",
+  "years"
+ ],
+ "photo_quality": [
+  "blurry",
+  "illegible",
+  "scan",
+  "poor",
+  "photo"
+ ]
+}

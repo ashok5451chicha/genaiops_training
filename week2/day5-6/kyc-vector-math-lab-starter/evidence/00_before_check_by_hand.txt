@@ -1,0 +1,8 @@
+$ python check_by_hand.py
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\check_by_hand.py", line 16, in <module>
+    "p_r_dot": dot(P, R), "p_norm": norm(P), "r_norm": norm(R),
+               ^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 26, in dot
+    raise NotImplementedError("dot() is not written yet")
+NotImplementedError: dot() is not written yet

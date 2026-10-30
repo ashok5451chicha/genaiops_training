@@ -1,0 +1,13 @@
+$ python check_by_hand.py
+Item            your answer   code says  Result
+p_r_dot                  24      24.000  MATCH
+p_norm                    5       5.000  MATCH
+r_norm                    5       5.000  MATCH
+p_r_cosine             0.96       0.960  MATCH
+p_r_distance          1.414       1.414  MATCH
+p_q_cosine              1.0       1.000  MATCH
+p_q_distance            5.0       5.000  MATCH
+p_s_cosine              0.0       0.000  MATCH
+p_s_distance         13.928      13.928  MATCH
+
+All answers match.

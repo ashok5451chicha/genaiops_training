@@ -1,0 +1,8 @@
+$ python run_pipeline.py
+Loaded 20 synthetic KYC records, 5 remediation categories
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\run_pipeline.py", line 28, in <module>
+    main()
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\run_pipeline.py", line 24, in main
+    raise NotImplementedError("run_pipeline.main() is not written yet")
+NotImplementedError: run_pipeline.main() is not written yet

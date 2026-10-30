@@ -1,0 +1,32 @@
+[
+ {
+  "code": "PROOF_OF_ADDRESS",
+  "description": "Address proof missing or expired: utility bill or rent lease for the residence is absent or out of date.",
+  "priority": "MEDIUM",
+  "action": "Request a fresh address proof (utility bill not older than three months, or rental agreement)."
+ },
+ {
+  "code": "ID_MISMATCH",
+  "description": "Identity document mismatch: name or spelling on the passport or licence differs from the application, or the photo is unclear.",
+  "priority": "HIGH",
+  "action": "Verify identity in person or by video call and correct the master record."
+ },
+ {
+  "code": "SOURCE_OF_FUNDS",
+  "description": "Source of funds unclear: income and large deposits are unexplained or unsupported by salary or business papers.",
+  "priority": "HIGH",
+  "action": "Collect income evidence and a source-of-funds declaration."
+ },
+ {
+  "code": "HIGH_RISK_REVIEW",
+  "description": "High risk review: politically exposed person, cash intensive business or overseas remittances need enhanced due diligence.",
+  "priority": "HIGH",
+  "action": "Escalate to enhanced due diligence with compliance sign-off."
+ },
+ {
+  "code": "PERIODIC_REFRESH",
+  "description": "Periodic refresh: dormant or inactive account whose review is due after many years.",
+  "priority": "LOW",
+  "action": "Schedule the periodic KYC refresh and contact the customer."
+ }
+]

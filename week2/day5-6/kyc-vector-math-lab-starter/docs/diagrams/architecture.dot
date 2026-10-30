@@ -1,0 +1,13 @@
+digraph G { rankdir=TB; graph [fontname=Arial,dpi=150,pad=0.2,nodesep=0.35,ranksep=0.55]; node [shape=box,style="rounded,filled",fillcolor="#DCE6F2",color="#1F3864",fontname=Arial,fontsize=18]; edge [color="#1F3864",fontname=Arial,fontsize=14];
+ subgraph cluster_in { label="Inputs (synthetic)"; fontname=Arial; fontsize=16; style=dashed; color="#7F7F7F";
+  rec [label="KYC records\n20 customers, analyst notes",fillcolor="#FFF2CC"]; cat [label="Remediation categories\n5 types + priority + action",fillcolor="#FFF2CC"]; cfg [label="config.json\nthresholds",fillcolor="#FFF2CC"]; }
+ emb [label="embedder.py\ntext -> vector (concepts + hashed names)"];
+ vm [label="vector_math.py\ndot, norm, cosine, euclidean"];
+ subgraph cluster_a { label="Task A: classify notes"; fontname=Arial; fontsize=16; style=dashed; color="#1F3864";
+  a1 [label="note vector vs each\ncategory vector"]; a2 [label="highest cosine wins\nweak or empty -> MANUAL_REVIEW"]; }
+ subgraph cluster_b { label="Task B: find duplicate profiles"; fontname=Arial; fontsize=16; style=dashed; color="#1F3864";
+  b1 [label="every pair once (i < j)\ncosine + euclidean"]; b2 [label=">= 0.85 probable\n>= 0.70 possible"]; }
+ mask [label="mask_id()\nIDs masked in every output",fillcolor="#FCE4D6"];
+ q [label="remediation_queue.csv\nsorted by priority",fillcolor="#E2EFDA"]; d [label="duplicate_pairs.csv\nHUMAN REVIEW only, no auto-merge",fillcolor="#E2EFDA"]; s [label="summary.md\naccuracy, precision, recall",fillcolor="#E2EFDA"];
+ rec->emb; cat->emb; emb->a1; vm->a1 [style=dashed]; a1->a2; emb->b1; vm->b1 [style=dashed]; b1->b2; cfg->a2 [style=dashed]; cfg->b2 [style=dashed];
+ a2->mask->q; b2->d; a2->s; b2->s; }

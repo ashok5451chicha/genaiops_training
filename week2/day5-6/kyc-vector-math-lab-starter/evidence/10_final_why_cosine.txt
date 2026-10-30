@@ -1,0 +1,14 @@
+$ python why_cosine.py
+1. Direction versus size:  P=[3, 4, 0, 0] and Q=[6, 8, 0, 0] (Q is P doubled)
+   cosine = 1.000  (same direction)   distance = 5.000  (far apart)
+   The same kind of customer can look 'far' on distance only because one record has more of everything.
+
+2. A short note and a long note about the same topic
+   cosine = 0.977   distance = 5.025
+   Cosine says 'same topic'. Distance is large because the long note simply has bigger numbers.
+
+3. The link between the two: after scaling to length 1, distance^2 = 2 - 2 x cosine
+   distance on unit vectors = 0.213   so distance^2 = 0.045   and 2 - 2 x cosine = 0.045
+
+4. Unrelated: P=[3, 4, 0, 0] and S=[0, 0, 5, 12]
+   cosine = 0.000  (nothing in common, right angles)

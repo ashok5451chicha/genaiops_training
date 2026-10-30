@@ -1,0 +1,81 @@
+$ python -m unittest discover -s tests   (after M1, M2 and the norm/euclidean/zero-vector fixes)
+F..F..........
+======================================================================
+FAIL: test_case_does_not_matter (test_embedder.EmbedderTests.test_case_does_not_matter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_embedder.py", line 11, in test_case_does_not_matter
+    self.assertEqual(embed("Passport EXPIRED"), embed("passport expired"))
+AssertionError: Lists differ: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0[93 chars] 0.5] != [1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0[93 chars] 0.0]
+
+First differing element 0:
+0.0
+1.0
+
+- [0.0,
+?  ^
+
++ [1.0,
+?  ^
+
++  0.0,
++  0.0,
++  1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+-  0.0,
+?     ^
+
++  0.0]
+?     ^
+
+-  0.0,
+-  0.0,
+-  0.5]
+
+======================================================================
+FAIL: test_cosine_known_value (test_vector_math.VectorMathTests.test_cosine_known_value)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 24, in test_cosine_known_value
+    self.assertAlmostEqual(cosine_similarity([1, 0], [1, 1]), 0.5)
+AssertionError: 0.7071067811865475 != 0.5 within 7 places (0.20710678118654746 difference)
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.003s
+
+FAILED (failures=2)
+$ python check_by_hand.py
+Item            your answer   code says  Result
+p_r_dot                  24      24.000  MATCH
+p_norm                    5       5.000  MATCH
+r_norm                    5       5.099  DIFFERENT - investigate
+p_r_cosine             0.96       0.941  DIFFERENT - investigate
+p_r_distance          1.414       1.732  DIFFERENT - investigate
+p_q_cosine              1.0       1.000  MATCH
+p_q_distance            5.0       5.000  MATCH
+p_s_cosine              0.0       0.000  MATCH
+p_s_distance         13.928      13.928  MATCH
+
+3 answer(s) differ. Who is wrong: you, or the code?

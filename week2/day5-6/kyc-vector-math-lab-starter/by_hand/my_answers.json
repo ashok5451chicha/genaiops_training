@@ -1,0 +1,11 @@
+{
+  "p_r_dot": 24,
+  "p_norm": 5,
+  "r_norm": 5,
+  "p_r_cosine": 0.96,
+  "p_r_distance": 1.414,
+  "p_q_cosine": 1.0,
+  "p_q_distance": 5.0,
+  "p_s_cosine": 0.0,
+  "p_s_distance": 13.928
+}

@@ -1,0 +1,173 @@
+$ python -m unittest discover -s tests
+F..EEEE.EEFFFE
+======================================================================
+ERROR: test_cosine_known_value (test_vector_math.VectorMathTests.test_cosine_known_value)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 24, in test_cosine_known_value
+    self.assertAlmostEqual(cosine_similarity([1, 0], [1, 1]), 0.5)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 44, in cosine_similarity
+    return dot(a, b) / (la * lb)
+           ^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 26, in dot
+    raise NotImplementedError("dot() is not written yet")
+NotImplementedError: dot() is not written yet
+
+======================================================================
+ERROR: test_cosine_never_above_one (test_vector_math.VectorMathTests.test_cosine_never_above_one)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 30, in test_cosine_never_above_one
+    self.assertLessEqual(cosine_similarity([5, 1, 2], [1, 7, 3]), 1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 44, in cosine_similarity
+    return dot(a, b) / (la * lb)
+           ^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 26, in dot
+    raise NotImplementedError("dot() is not written yet")
+NotImplementedError: dot() is not written yet
+
+======================================================================
+ERROR: test_cosine_right_angle (test_vector_math.VectorMathTests.test_cosine_right_angle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 27, in test_cosine_right_angle
+    self.assertAlmostEqual(cosine_similarity([1, 0], [0, 1]), 0.0)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 44, in cosine_similarity
+    return dot(a, b) / (la * lb)
+           ^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 26, in dot
+    raise NotImplementedError("dot() is not written yet")
+NotImplementedError: dot() is not written yet
+
+======================================================================
+ERROR: test_cosine_same_direction (test_vector_math.VectorMathTests.test_cosine_same_direction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 21, in test_cosine_same_direction
+    self.assertAlmostEqual(cosine_similarity([3, 4], [6, 8]), 1.0)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 44, in cosine_similarity
+    return dot(a, b) / (la * lb)
+           ^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 26, in dot
+    raise NotImplementedError("dot() is not written yet")
+NotImplementedError: dot() is not written yet
+
+======================================================================
+ERROR: test_distance_unit_vector_identity (test_vector_math.VectorMathTests.test_distance_unit_vector_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 47, in test_distance_unit_vector_identity
+    d = euclidean_distance(normalize(a), normalize(b))
+                           ^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 37, in normalize
+    raise NotImplementedError("normalize() is not written yet")
+NotImplementedError: normalize() is not written yet
+
+======================================================================
+ERROR: test_dot (test_vector_math.VectorMathTests.test_dot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 12, in test_dot
+    self.assertEqual(dot([3, 4], [4, 3]), 24)
+                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 26, in dot
+    raise NotImplementedError("dot() is not written yet")
+NotImplementedError: dot() is not written yet
+
+======================================================================
+ERROR: test_normalize_has_length_one (test_vector_math.VectorMathTests.test_normalize_has_length_one)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 18, in test_normalize_has_length_one
+    self.assertAlmostEqual(norm(normalize([3, 4])), 1.0)
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 37, in normalize
+    raise NotImplementedError("normalize() is not written yet")
+NotImplementedError: normalize() is not written yet
+
+======================================================================
+FAIL: test_case_does_not_matter (test_embedder.EmbedderTests.test_case_does_not_matter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_embedder.py", line 11, in test_case_does_not_matter
+    self.assertEqual(embed("Passport EXPIRED"), embed("passport expired"))
+AssertionError: Lists differ: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0[93 chars] 0.5] != [1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0[93 chars] 0.0]
+
+First differing element 0:
+0.0
+1.0
+
+- [0.0,
+?  ^
+
++ [1.0,
+?  ^
+
++  0.0,
++  0.0,
++  1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+-  0.0,
+?     ^
+
++  0.0]
+?     ^
+
+-  0.0,
+-  0.0,
+-  0.5]
+
+======================================================================
+FAIL: test_euclidean_345 (test_vector_math.VectorMathTests.test_euclidean_345)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 33, in test_euclidean_345
+    self.assertEqual(euclidean_distance([0, 0], [3, 4]), 5)
+AssertionError: 7 != 5
+
+======================================================================
+FAIL: test_euclidean_is_not_manhattan (test_vector_math.VectorMathTests.test_euclidean_is_not_manhattan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 36, in test_euclidean_is_not_manhattan
+    self.assertAlmostEqual(euclidean_distance([0, 0], [1, 1]), math.sqrt(2))
+AssertionError: 2 != 1.4142135623730951 within 7 places (0.5857864376269049 difference)
+
+======================================================================
+FAIL: test_norm (test_vector_math.VectorMathTests.test_norm)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\tests\test_vector_math.py", line 15, in test_norm
+    self.assertEqual(norm([3, 4]), 5)
+AssertionError: 25 != 5
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.005s
+
+FAILED (failures=4, errors=7)

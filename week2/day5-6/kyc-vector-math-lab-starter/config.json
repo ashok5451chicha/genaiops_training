@@ -1,0 +1,7 @@
+{
+ "duplicate_cosine": 0.85,
+ "review_cosine": 0.7,
+ "min_note_score": 0.3,
+ "mask_visible_chars": 3,
+ "bucket_weight": 0.5
+}

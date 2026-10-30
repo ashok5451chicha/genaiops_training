@@ -1,0 +1,32 @@
+{
+ "P": [
+  3,
+  4,
+  0,
+  0
+ ],
+ "Q": [
+  6,
+  8,
+  0,
+  0
+ ],
+ "R": [
+  4,
+  3,
+  0,
+  0
+ ],
+ "S": [
+  0,
+  0,
+  5,
+  12
+ ],
+ "dimensions": [
+  "id_checks_passed",
+  "address_checks_passed",
+  "funds_checks_passed",
+  "risk_flags"
+ ]
+}

@@ -1,0 +1,45 @@
+$ python run_pipeline.py   (after config review_cosine 0.9 -> 0.7, as documented)
+Loaded 20 synthetic KYC records, 5 remediation categories
+
+REMEDIATION QUEUE (sorted by priority, then score)
+
+record_id  customer_ref  masked_id    category          score  priority  expected        
+---------  ------------  -----------  ----------------  -----  --------  ----------------
+K007       CUST-1007     SYNID-**987  ID_MISMATCH       0.88   HIGH      ID_MISMATCH     
+K019       CUST-1019     SYNID-**120  ID_MISMATCH       0.813  HIGH      ID_MISMATCH     
+K008       CUST-1008     SYNID-**456  SOURCE_OF_FUNDS   0.796  HIGH      SOURCE_OF_FUNDS 
+K013       CUST-1013     SYNID-**456  ID_MISMATCH       0.791  HIGH      ID_MISMATCH     
+K003       CUST-1003     SYNID-**911  SOURCE_OF_FUNDS   0.777  HIGH      SOURCE_OF_FUNDS 
+K013       CUST-1014     SYNID-**547  SOURCE_OF_FUNDS   0.765  HIGH      SOURCE_OF_FUNDS 
+K002       CUST-1002     SYNID-**120  ID_MISMATCH       0.73   HIGH      ID_MISMATCH     
+K017       CUST-1017     SYNID-**911  SOURCE_OF_FUNDS   0.725  HIGH      SOURCE_OF_FUNDS 
+K004       CUST-1004     SYNID-**403  HIGH_RISK_REVIEW  0.596  HIGH      HIGH_RISK_REVIEW
+K016       CUST-1016     SYNID-**987  HIGH_RISK_REVIEW  0.596  HIGH      HIGH_RISK_REVIEW
+K009       CUST-1009     SYNID-**765  HIGH_RISK_REVIEW  0.574  HIGH      HIGH_RISK_REVIEW
+K012       CUST-1012     SYNID-**321  HIGH_RISK_REVIEW  0.493  HIGH      HIGH_RISK_REVIEW
+K020       CUST-1020     SYNID-**102  MANUAL_REVIEW     0.0    HIGH      MANUAL_REVIEW   
+K018       CUST-1018     SYNID-**213  PROOF_OF_ADDRESS  0.941  MEDIUM    PROOF_OF_ADDRESS
+K006       CUST-1006     SYNID-**310  PROOF_OF_ADDRESS  0.933  MEDIUM    PROOF_OF_ADDRESS
+K011       CUST-1011     SYNID-**098  PROOF_OF_ADDRESS  0.91   MEDIUM    PROOF_OF_ADDRESS
+K001       CUST-1001     SYNID-**213  PROOF_OF_ADDRESS  0.806  MEDIUM    PROOF_OF_ADDRESS
+K005       CUST-1005     SYNID-**234  PERIODIC_REFRESH  0.998  LOW       PERIODIC_REFRESH
+K010       CUST-1010     SYNID-**874  PERIODIC_REFRESH  0.866  LOW       PERIODIC_REFRESH
+K015       CUST-1015     SYNID-**023  PERIODIC_REFRESH  0.693  LOW       PERIODIC_REFRESH
+
+DUPLICATE CANDIDATES (human review only - nothing is merged)
+
+record_a  record_b  cosine  euclidean  decision                       
+--------  --------  ------  ---------  -------------------------------
+K003      K017      0.976   0.5        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K001      K018      0.964   0.5        PROBABLE_DUPLICATE_HUMAN_REVIEW
+K002      K019      0.825   0.866      POSSIBLE_DUPLICATE_HUMAN_REVIEW
+K005      K015      0.77    1.118      POSSIBLE_DUPLICATE_HUMAN_REVIEW
+K007      K020      0.77    1.118      POSSIBLE_DUPLICATE_HUMAN_REVIEW
+K004      K016      0.751   1.658      POSSIBLE_DUPLICATE_HUMAN_REVIEW
+K011      K013      0.707   1.118      POSSIBLE_DUPLICATE_HUMAN_REVIEW
+
+Classification: 20/20 correct (accuracy 1.0)
+Duplicates: precision 1.0, recall 0.667, recall incl. possible 1.0 (TP 2, FP 0, missed 1)
+
+Wrote: output\remediation_queue.csv, output\duplicate_pairs.csv, output\summary.md
+Privacy check: no raw ID number on screen or in any output file.

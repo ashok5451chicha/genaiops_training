@@ -38,7 +38,9 @@ genaiops_training/
 │   └── day1/                       ← Day 1 homework (overlay for automation-to-agentic-spectrum)
 └── week2/                          ← 2 assignments
     ├── day2/                       ← Day 2 homework (overlay for automation-to-agentic-spectrum)
-    └── day3/                       ← Day 3 homework (overlay for cosine-vector-mathematics)
+    ├── day3/                       ← Day 3 homework (overlay for cosine-vector-mathematics)
+    └── day5-6/
+        └── kyc-vector-math-lab-starter/   ← Days 5-6 KYC lab (complete project, from kyc-starter-participants.zip)
 ```
 
 The day folders keep the assignment numbers (Day 1, Day 2, Day 3) so they match the assignment briefs and the file
@@ -172,6 +174,33 @@ week2/day3/
 **Still to do yourself for Day 3:**
 1. Copy `docs/TaskA_hand_working.md` by hand, then add a photo or scan of it.
 2. Task E now has an own-work example (GenAI operations: RAG assistant retrieving an old policy clause with the opposite meaning). Replace it if you have a better one.
+
+---
+
+## 5a. Week 2 / Days 5–6 – KYC remediation: vector mathematics in practice
+
+**Brief:** `docs/Participant_Starter_Brief_Days5-6_KYC.docx` inside the lab (from `kyc-starter-participants.zip`).
+A half-finished, partly wrong KYC helper: run it, list every inconsistency, write the missing pieces M1–M6, fix
+everything, prove it end to end.
+
+Unlike Days 1–3, this folder is the **complete project** (the starter came as a zip, not a course repo), so it runs
+as is. Everything in it is **SUBMIT** except `evidence/` (**EVIDENCE**: output of every run, before and after each
+fix). `output/` is git-ignored, as the brief requires; `python run_pipeline.py` re-creates it.
+
+| File | What it is |
+|---|---|
+| `inconsistency_log.md` | The 20 inconsistencies found (17 fixed, 3 explained): where, what, how found |
+| `README.md` (end section) | What was changed, results, one limitation of the toy embedder |
+| `by_hand/worksheet_answers.md`, `by_hand/my_answers.json` | Worksheet worked by hand; all 9 match `check_by_hand.py` |
+| `vector_math.py`, `embedder.py`, `kyc_pipeline.py`, `run_pipeline.py`, `why_cosine.py` | Fixed code and missing pieces M1–M5 |
+| `tests/test_pipeline.py` | M6: 30 new tests (suite 46/46 OK) |
+| `data/*.json`, `config.json` | Fixed data (K014 id, ISO date, status) and threshold (review_cosine 0.70) |
+
+Results: notes classified 1/20 → **20/20**; probable-duplicate precision 0.095 → **1.0**; all 3 known duplicates
+reach a human; no raw ID in any output.
+
+GitLab (from the brief): branch `your-name-days5-6`, commit `Days 5-6 KYC vector maths`, merge request to the
+trainer. Check `git status` shows no `.env` and no `output/`.
 
 ---
 

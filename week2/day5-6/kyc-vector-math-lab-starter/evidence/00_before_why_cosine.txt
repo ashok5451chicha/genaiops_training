@@ -1,0 +1,12 @@
+$ python why_cosine.py
+1. Direction versus size:  P=[3,4] and Q=[6,8] (Q is P doubled)
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\why_cosine.py", line 16, in <module>
+    print(f"   cosine = {cosine_similarity(P, Q):.3f}  (same direction)   distance = {euclidean_distance(P, Q):.3f}  (far apart)")
+                         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 44, in cosine_similarity
+    return dot(a, b) / (la * lb)
+           ^^^^^^^^^
+  File "C:\Users\Admin\Documents\unified-genai-ops-GAK\training\week2\day5-6\kyc-vector-math-lab-starter\vector_math.py", line 26, in dot
+    raise NotImplementedError("dot() is not written yet")
+NotImplementedError: dot() is not written yet
