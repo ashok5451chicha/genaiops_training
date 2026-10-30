@@ -1,0 +1,35 @@
+$ python finder.py "I paid my credit card bill two days late, will I be charged anything?" --explain
+
+Question : I paid my credit card bill two days late, will I be charged anything?
+Embedder : concept lexicon (19 concepts + 32 hashed word dims)
+Concepts : (stemmed words -> banking concept) 'credit card' -> card, 'day' -> time_limit, 'lat' -> repayment_trouble, 'charg' -> charge
+
+ #1  CC-03  Credit card late payment fee
+      cosine 0.793   (euclidean distance 5.340)
+      Quote [verified in CC-03]: "If the minimum payment on a credit card is not received by the statement due date, a late payment fee of 12.00 is charged to the card account."
+ #2  CP-02  Referral to the ombudsman
+      cosine 0.547   (euclidean distance 6.734)
+      Quote [verified in CP-02]: "A customer who is not satisfied with the bank's final response, or who has not received a final response within the time limit, may refer the complaint to the financial ombudsman free of charge."
+ #3  LN-04  Late payment charge on loans
+      cosine 0.518   (euclidean distance 5.906)
+      Quote [verified in LN-04]: "The charge is applied once for each missed instalment and is never applied more than once in the same month."
+
+Human review: read the full clause before replying to the customer; the score shows similarity, not that the clause answers the question.
+
+$ python finder.py "My husband passed away last month, how quickly will you deal with my complaint?" --explain
+
+Question : My husband passed away last month, how quickly will you deal with my complaint?
+Embedder : concept lexicon (19 concepts + 32 hashed word dims)
+Concepts : (stemmed words -> banking concept) 'complaint' -> complaint
+
+ #1  CP-02  Referral to the ombudsman
+      cosine 0.494   (euclidean distance 7.070)
+      Quote [verified in CP-02]: "A customer who is not satisfied with the bank's final response, or who has not received a final response within the time limit, may refer the complaint to the financial ombudsman free of charge."
+ #2  CP-03  Complaints from customers in vulnerable circumstances
+      cosine 0.306   (euclidean distance 6.119)
+      Quote [verified in CP-03]: "Complaints from customers in vulnerable circumstances, such as serious illness, bereavement or a sudden loss of income, are given priority."
+ #3  CP-01  Complaint response times
+      cosine 0.163   (euclidean distance 10.210)
+      Quote [verified in CP-01]: "Every complaint is acknowledged within 1 working day of being received."
+
+Human review: read the full clause before replying to the customer; the score shows similarity, not that the clause answers the question.

@@ -1,0 +1,28 @@
+test_at_least_three_near_duplicate_pairs (test_clause_finder.ClauseStore.test_at_least_three_near_duplicate_pairs) ... ok
+test_duplicate_id_is_rejected (test_clause_finder.ClauseStore.test_duplicate_id_is_rejected) ... ok
+test_store_size_and_fields (test_clause_finder.ClauseStore.test_store_size_and_fields) ... ok
+test_contractions (test_clause_finder.Embedder.test_contractions) ... ok
+test_longest_phrase_wins (test_clause_finder.Embedder.test_longest_phrase_wins) ... ok
+test_stemming_joins_word_forms (test_clause_finder.Embedder.test_stemming_joins_word_forms) ... ok
+test_synonyms_share_a_concept_without_sharing_words (test_clause_finder.Embedder.test_synonyms_share_a_concept_without_sharing_words) ... ok
+test_cli_runs (test_clause_finder.FinderEndToEnd.test_cli_runs) ... ok
+test_every_quote_for_every_test_question_is_verbatim (test_clause_finder.FinderEndToEnd.test_every_quote_for_every_test_question_is_verbatim) ... ok
+test_gibberish_is_not_found (test_clause_finder.FinderEndToEnd.test_gibberish_is_not_found) ... ok
+test_out_of_scope_is_not_found (test_clause_finder.FinderEndToEnd.test_out_of_scope_is_not_found) ... ok
+test_threshold_is_applied (test_clause_finder.FinderEndToEnd.test_threshold_is_applied) ... ok
+test_top3_have_id_score_and_verified_quote (test_clause_finder.FinderEndToEnd.test_top3_have_id_score_and_verified_quote) ... ok
+test_cosine_known_values (test_clause_finder.HandWrittenMaths.test_cosine_known_values) ... ok
+test_dot_and_norm (test_clause_finder.HandWrittenMaths.test_dot_and_norm) ... ok
+test_errors (test_clause_finder.HandWrittenMaths.test_errors) ... ok
+test_euclidean (test_clause_finder.HandWrittenMaths.test_euclidean) ... ok
+test_matches_numpy_to_3dp_on_real_vectors (test_clause_finder.HandWrittenMaths.test_matches_numpy_to_3dp_on_real_vectors) ... ok
+test_rank_orders_and_keeps_ties_stable (test_clause_finder.HandWrittenMaths.test_rank_orders_and_keeps_ties_stable) ... ok
+test_altered_or_invented_quote_fails (test_clause_finder.Verifier.test_altered_or_invented_quote_fails) ... ok
+test_best_snippet_picks_the_relevant_sentence (test_clause_finder.Verifier.test_best_snippet_picks_the_relevant_sentence) ... ok
+test_sentences_are_cut_from_the_original (test_clause_finder.Verifier.test_sentences_are_cut_from_the_original) ... ok
+test_verbatim_quote_passes (test_clause_finder.Verifier.test_verbatim_quote_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.063s
+
+OK

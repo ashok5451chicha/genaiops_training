@@ -1,0 +1,13 @@
+Question: Customer says they cannot pay their EMI this month. What happens to the loan?
+Clause  : LN-01
+  cosine    hand-written 0.848265 | numpy 0.848265 | scikit-learn 0.848265
+  euclidean hand-written 9.679876 | numpy 9.679876
+  match to 3 decimal places: YES
+
+Question: I paid my credit card bill two days late, will I be charged anything?
+Clause  : CC-03
+  cosine    hand-written 0.792565 | numpy 0.792565 | scikit-learn 0.792565
+  euclidean hand-written 5.339476 | numpy 5.339476
+  match to 3 decimal places: YES
+
+RESULT: all match

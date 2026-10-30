@@ -33,6 +33,7 @@ All data is synthetic. **No API keys are in this repository.** `.env.example` ho
 ```
 genaiops_training/
 ├── README.md                       ← this file
+├── capstone-1/                     ← Weekly mini-capstone 1: Policy Clause Finder (has its own README)
 ├── week1/                          ← 1 assignment
 │   └── day1/                       ← Day 1 homework (overlay for automation-to-agentic-spectrum)
 └── week2/                          ← 2 assignments
@@ -171,6 +172,22 @@ week2/day3/
 **Still to do yourself for Day 3:**
 1. Copy `docs/TaskA_hand_working.md` by hand, then add a photo or scan of it.
 2. Task E now has an own-work example (GenAI operations: RAG assistant retrieving an old policy clause with the opposite meaning). Replace it if you have a better one.
+
+---
+
+## 5b. Capstone 1 – Policy Clause Finder
+
+**Brief:** `Weekly Mini Capatone- 1.pdf` (CGI GenAIOps weekly mini-capstones), set Fri 30-Oct-2026, due Mon 2-Nov-2026.
+A semantic search tool that ranks 19 synthetic bank policy clauses against an analyst's question by cosine
+similarity (written by hand), shows the top 3 with verified quotes, and says "not found" below a threshold.
+
+Everything is in [`capstone-1/`](capstone-1/), with its own [README](capstone-1/README.md): purpose, how to run,
+results table, two limitations, one improvement idea and the acceptance checklist. The whole folder is **SUBMIT**
+(the brief says to push the code, README, test results and architecture diagram in a folder named `capstone-1`).
+`docs/WALKTHROUGH.md` is the script for the 8-minute trainer walkthrough (REFERENCE).
+
+Results: 8/8 test questions right first time (keyword baseline 3/8, Euclidean 0/8); a 6-question stress set with
+unseen wording scores 1/6 first time (6/6 in the top 3), reported as is; 23/23 unit tests.
 
 ---
 

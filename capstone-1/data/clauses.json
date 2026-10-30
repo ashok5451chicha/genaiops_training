@@ -1,0 +1,127 @@
+{
+  "_note": "Synthetic policy clauses for a fictional bank. Lab use only: not a real bank, not real policy, no real customer data.",
+  "clauses": [
+    {
+      "id": "LN-01",
+      "category": "loans",
+      "title": "Missed instalment and repayment default",
+      "text": "If an instalment on a personal loan is not paid in full on its due date, the account is marked as in arrears from the next day. The borrower is contacted within 3 working days to agree how the arrears will be cleared. If any amount remains unpaid for 90 days, the loan is classified as a repayment default and the default is reported to the credit reference agencies."
+    },
+    {
+      "id": "LN-02",
+      "category": "loans",
+      "title": "Financial hardship arrangement",
+      "text": "A borrower facing financial hardship, for example after job loss, illness or a large drop in income, may apply for a hardship arrangement. Options are a repayment holiday of up to 3 months or a restructured repayment plan over a longer term. Every hardship arrangement must be reviewed and approved by a hardship specialist; it cannot be approved automatically."
+    },
+    {
+      "id": "LN-03",
+      "category": "loans",
+      "title": "Early settlement of a personal loan",
+      "text": "A borrower may settle a personal loan in full before the end of its term. An early settlement charge of 2% of the outstanding principal applies if the loan is settled within the first 12 months. No early settlement charge applies after 12 months. Partial prepayments of at least 500.00 are accepted at any time and reduce the remaining term."
+    },
+    {
+      "id": "LN-04",
+      "category": "loans",
+      "title": "Late payment charge on loans",
+      "text": "A late payment charge of 25.00 is added to the loan account when an instalment is not received by its due date. The charge is applied once for each missed instalment and is never applied more than once in the same month.",
+      "near_duplicate_of": "CC-03"
+    },
+    {
+      "id": "LN-05",
+      "category": "loans",
+      "title": "Change to a variable interest rate",
+      "text": "For loans with a variable interest rate, the bank gives the borrower at least 30 days written notice before any increase in the rate takes effect. The notice states the new rate and the new monthly instalment. The borrower may repay the loan in full without an early settlement charge during the notice period."
+    },
+    {
+      "id": "CC-01",
+      "category": "cards",
+      "title": "Lost or stolen card",
+      "text": "A customer whose card is lost or stolen must report it as soon as possible through the mobile app or the 24-hour card line. The card is blocked immediately when the report is received. The customer is not liable for transactions made after the report, and a replacement card is sent within 5 working days."
+    },
+    {
+      "id": "CC-02",
+      "category": "cards",
+      "title": "Unauthorised card transaction",
+      "text": "A customer who reports a card transaction that they did not make or authorise receives a refund of the amount by the end of the next working day. The refund may be reversed only if the investigation shows that the customer acted fraudulently or with gross negligence. Unauthorised transactions must be reported within 13 months of the debit date.",
+      "near_duplicate_of": "CC-04"
+    },
+    {
+      "id": "CC-03",
+      "category": "cards",
+      "title": "Credit card late payment fee",
+      "text": "If the minimum payment on a credit card is not received by the statement due date, a late payment fee of 12.00 is charged to the card account. Any promotional interest rate on the card may also be withdrawn after two late payments in a 12-month period.",
+      "near_duplicate_of": "LN-04"
+    },
+    {
+      "id": "CC-04",
+      "category": "cards",
+      "title": "Card dispute with a merchant",
+      "text": "A customer who authorised a card payment but did not receive the goods or services, or was charged twice or the wrong amount by a merchant, may raise a dispute within 120 days of the transaction. The bank gives a temporary credit while it raises a chargeback with the merchant's bank. The temporary credit is removed if the merchant proves the goods were delivered.",
+      "near_duplicate_of": "CC-02"
+    },
+    {
+      "id": "CC-05",
+      "category": "cards",
+      "title": "Credit limit increase",
+      "text": "A customer may request an increase to the credit limit on a credit card once every 6 months. Each request is subject to an affordability assessment based on income and existing commitments. The bank never increases a credit limit without the customer's consent."
+    },
+    {
+      "id": "CP-01",
+      "category": "complaints",
+      "title": "Complaint response times",
+      "text": "Every complaint is acknowledged within 1 working day of being received. The bank sends a final response within 15 working days. In exceptional circumstances the bank may take up to 35 working days, but must write to the customer within the first 15 working days to explain the reason for the delay.",
+      "near_duplicate_of": "CP-03"
+    },
+    {
+      "id": "CP-02",
+      "category": "complaints",
+      "title": "Referral to the ombudsman",
+      "text": "A customer who is not satisfied with the bank's final response, or who has not received a final response within the time limit, may refer the complaint to the financial ombudsman free of charge. The referral must be made within 6 months of the date of the final response."
+    },
+    {
+      "id": "CP-03",
+      "category": "complaints",
+      "title": "Complaints from customers in vulnerable circumstances",
+      "text": "Complaints from customers in vulnerable circumstances, such as serious illness, bereavement or a sudden loss of income, are given priority. A named case handler is assigned, and the bank aims to send a final response within 10 working days.",
+      "near_duplicate_of": "CP-01"
+    },
+    {
+      "id": "KY-01",
+      "category": "kyc",
+      "title": "Identity checks when opening an account",
+      "text": "Before an account is opened, the customer must provide one photo identity document, such as a passport or driving licence, and one proof of address dated within the last 3 months, such as a utility bill or bank statement. The account cannot be used until both documents have been verified."
+    },
+    {
+      "id": "KY-02",
+      "category": "kyc",
+      "title": "Periodic KYC review for personal customers",
+      "text": "The bank reviews the identity and address details of personal customers periodically: every 1 year for high-risk customers, every 3 years for medium-risk customers and every 5 years for low-risk customers. If a customer does not provide the requested documents within 30 days of a second reminder, the account is restricted to incoming payments only.",
+      "near_duplicate_of": "KY-04"
+    },
+    {
+      "id": "KY-03",
+      "category": "kyc",
+      "title": "Change of address",
+      "text": "A customer who changes residential address must update it with the bank within 30 days. The new address must be supported by a proof of address document dated within the last 3 months. Statements and cards are not sent to the new address until the document has been verified."
+    },
+    {
+      "id": "KY-04",
+      "category": "kyc",
+      "title": "Periodic KYC review for business customers",
+      "text": "For business accounts, the identity of every beneficial owner holding more than 25% of the business is re-verified every 12 months. The business must also confirm its registered address and the nature of its activities each year. Accounts of businesses that do not respond within 30 days are restricted to incoming payments only.",
+      "near_duplicate_of": "KY-02"
+    },
+    {
+      "id": "AC-01",
+      "category": "accounts",
+      "title": "Closing an account",
+      "text": "A customer may close a current or savings account at any time through the app, by phone or at a branch. Any overdrawn balance must be repaid first. The account is closed within 7 working days, and the remaining balance is transferred to an account in the customer's name."
+    },
+    {
+      "id": "AC-02",
+      "category": "accounts",
+      "title": "Dormant accounts",
+      "text": "An account with no customer-initiated transactions for 24 months is classified as dormant. A dormant account cannot be used for withdrawals or outgoing payments until the customer reactivates it by verifying their identity. The balance of a dormant account remains the customer's money and is never lost."
+    }
+  ]
+}

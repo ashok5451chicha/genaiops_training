@@ -1,0 +1,34 @@
+{
+  "_note": "Analyst-style questions written in customer words, which deliberately differ from the policy wording. Synthetic.",
+  "questions": [
+    {"id": "Q1", "question": "Customer says they cannot pay their EMI this month. What happens to the loan?", "expected": "LN-01",
+     "why_tricky": "The brief's own example: 'EMI' and 'cannot pay' never appear in the clause, which says 'instalment' and 'repayment default'"},
+    {"id": "Q2", "question": "Customer lost their job and wants a break from loan payments for a while", "expected": "LN-02",
+     "why_tricky": "'break from payments' vs 'repayment holiday'"},
+    {"id": "Q3", "question": "There is a purchase on my card that I never made", "expected": "CC-02",
+     "why_tricky": "Near-duplicate CC-04 (merchant dispute) is also about a card payment the customer is unhappy with"},
+    {"id": "Q4", "question": "I paid my credit card bill two days late, will I be charged anything?", "expected": "CC-03",
+     "why_tricky": "Near-duplicate LN-04 is a late payment charge on loans"},
+    {"id": "Q5", "question": "How long does the bank have to reply to my complaint?", "expected": "CP-01",
+     "why_tricky": "Near-duplicate CP-03 also gives a complaint response time"},
+    {"id": "Q6", "question": "I have moved house recently, what do I need to send you?", "expected": "KY-03",
+     "why_tricky": "'moved house' vs 'changes residential address'; KY-01 also asks for proof of address"},
+    {"id": "Q7", "question": "Is there a penalty if I pay off my personal loan early?", "expected": "LN-03",
+     "why_tricky": "'pay off early' and 'penalty' vs 'settle' and 'early settlement charge'; LN-05 also mentions early settlement"},
+    {"id": "Q8", "question": "The shop never delivered the item I paid for with my card", "expected": "CC-04",
+     "why_tricky": "Near-duplicate CC-02 (unauthorised transaction)"}
+  ],
+  "stress_set_note": "Written AFTER the 8 main questions already scored 8/8, using words the lexicon does not know. The lexicon was NOT changed after seeing these results; they are reported as they came out.",
+  "stress_set": [
+    {"id": "S1", "question": "The ATM swallowed my debit card and did not give it back", "expected": "CC-01"},
+    {"id": "S2", "question": "Can I get a bigger spending allowance on my credit card?", "expected": "CC-05"},
+    {"id": "S3", "question": "My husband passed away last month, how quickly will you deal with my complaint?", "expected": "CP-03"},
+    {"id": "S4", "question": "I haven't touched my savings account in three years and now it is frozen", "expected": "AC-02"},
+    {"id": "S5", "question": "You are putting up the interest on my loan, can I get out of it?", "expected": "LN-05"},
+    {"id": "S6", "question": "We are a limited company. How often do you check who owns us?", "expected": "KY-04"}
+  ],
+  "out_of_scope": [
+    {"id": "X1", "question": "What time does the staff canteen open on Fridays?", "expected": "NOT_FOUND"},
+    {"id": "X2", "question": "How do I reset my email password on my laptop?", "expected": "NOT_FOUND"}
+  ]
+}

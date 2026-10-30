@@ -1,0 +1,17 @@
+$ python finder.py "Customer says they cannot pay their EMI this month. What happens to the loan?" --explain
+
+Question : Customer says they cannot pay their EMI this month. What happens to the loan?
+Embedder : concept lexicon (19 concepts + 32 hashed word dims)
+Concepts : (stemmed words -> banking concept) 'cannot pay' -> repayment_trouble, 'emi' -> loan, 'loan' -> loan
+
+ #1  LN-01  Missed instalment and repayment default
+      cosine 0.848   (euclidean distance 9.680)
+      Quote [verified in LN-01]: "If any amount remains unpaid for 90 days, the loan is classified as a repayment default and the default is reported to the credit reference agencies."
+ #2  LN-04  Late payment charge on loans
+      cosine 0.798   (euclidean distance 5.078)
+      Quote [verified in LN-04]: "A late payment charge of 25.00 is added to the loan account when an instalment is not received by its due date."
+ #3  LN-03  Early settlement of a personal loan
+      cosine 0.466   (euclidean distance 12.467)
+      Quote [verified in LN-03]: "A borrower may settle a personal loan in full before the end of its term."
+
+Human review: read the full clause before replying to the customer; the score shows similarity, not that the clause answers the question.

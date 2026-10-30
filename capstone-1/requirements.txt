@@ -1,0 +1,4 @@
+# Core tool (finder.py, embed.py, rank.py, verify.py, evaluate.py) uses only the Python standard library.
+# numpy: library cross-check (crosscheck.py, tests). scikit-learn: optional second cross-check.
+numpy>=1.26
+# matplotlib is only needed to redraw docs/architecture.png (python docs/make_diagram.py)

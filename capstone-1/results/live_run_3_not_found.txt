@@ -1,0 +1,17 @@
+$ python finder.py "What time does the staff canteen open on Fridays?"
+
+Question : What time does the staff canteen open on Fridays?
+Embedder : concept lexicon (19 concepts + 32 hashed word dims)
+
+NOT FOUND - best cosine score 0.255 is below the threshold 0.40.
+No clause is a reliable match. Check the policy library manually or ask the policy team.
+(Closest clauses, for information only: KY-02 0.255, AC-01 0.231, AC-02 0.160)
+
+$ python finder.py "I haven't touched my savings account in three years and now it is frozen"
+
+Question : I haven't touched my savings account in three years and now it is frozen
+Embedder : concept lexicon (19 concepts + 32 hashed word dims)
+
+NOT FOUND - best cosine score 0.269 is below the threshold 0.40.
+No clause is a reliable match. Check the policy library manually or ask the policy team.
+(Closest clauses, for information only: KY-02 0.269, AC-01 0.261, AC-02 0.144)
