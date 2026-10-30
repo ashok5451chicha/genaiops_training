@@ -1,6 +1,6 @@
 # Day 2 take-home – how it was implemented
 
-Repository: `https://github.com/digibhatia/automation-to-agentic-spectrum`, cloned to `training/week1/day2` (the Day 2
+Repository: `https://github.com/digibhatia/automation-to-agentic-spectrum`, cloned to `training/week2/day2` (the Day 2
 lab lives in the same repository as Day 1). **Nothing committed or pushed.** Assignment:
 `docs/assignments/Day2_Take_Home_Assignment.docx`. Write-up: `docs/Day2_Writeup.md` / `.pdf`. Run logs:
 `outputs/day2_runs/`.
@@ -48,7 +48,7 @@ Tests: `python -m unittest discover -s tests` → **63 OK** (3 skipped: the real
 ## Reproduce
 
 ```powershell
-cd training\week1\day2
+cd training\week2\day2
 python -m unittest discover -s tests
 python solutions/day2_models_and_embeddings/compare_tiers_cli.py --query Q1
 python solutions/day2_models_and_embeddings/embeddings_map.py --toy --query "How much vacation am I entitled to?"

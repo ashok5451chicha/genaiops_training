@@ -33,13 +33,15 @@ All data is synthetic. **No API keys are in this repository.** `.env.example` ho
 ```
 genaiops_training/
 ├── README.md                       ← this file
-└── week1/
-    ├── day1/                       ← Day 1 homework (overlay for automation-to-agentic-spectrum)
+├── week1/                          ← 1 assignment
+│   └── day1/                       ← Day 1 homework (overlay for automation-to-agentic-spectrum)
+└── week2/                          ← 2 assignments
     ├── day2/                       ← Day 2 homework (overlay for automation-to-agentic-spectrum)
     └── day3/                       ← Day 3 homework (overlay for cosine-vector-mathematics)
 ```
 
-Later weeks go in `week2/`, `week3/` and so on, with the same `dayN/` layout.
+The day folders keep the assignment numbers (Day 1, Day 2, Day 3) so they match the assignment briefs and the file
+names inside them (`IMPLEMENTATION_DAY2.md`, `Day2_Writeup.pdf`). Later weeks go in `week3/` and so on.
 
 ### What each assignment says to submit (copied from the briefs) → where it is
 
@@ -50,7 +52,7 @@ Yes, the `.py` files are required: every brief asks for the changed code and the
 | **Day 1** – a single Word or PDF write-up with Parts A to D | `week1/day1/docs/Day1_Writeup.pdf` |
 | **Day 1** – a zip of the files you changed (dispute_tools.py, policy.md, tickets.json, new tests) | `solutions/day1_ai_spectrum/*.py`, `data/policy.md`, `data/tickets.json`, `data/orders.json`, `tests/test_day1_assignment.py` |
 | **Day 1** – scoreboards before and after your change | `outputs/day1_runs/00_before_*`, `10_/11_partB_*`, `20_partC_*`, `30_after_*` |
-| **Day 2** – one Word or PDF write-up with Parts A to E | `week1/day2/docs/Day2_Writeup.pdf` (+ `Approved_Tools_Guideline_DRAFT.pdf` for Part E) |
+| **Day 2** – one Word or PDF write-up with Parts A to E | `week2/day2/docs/Day2_Writeup.pdf` (+ `Approved_Tools_Guideline_DRAFT.pdf` for Part E) |
 | **Day 2** – outputs/tier_comparison_Q1/Q2/Q3.md and the completed homework_comparison.md | `outputs/tier_comparison_Q1.md`, `_Q2.md`, `_Q3.md`, `outputs/homework_comparison.md` |
 | **Day 2** – a zip of changed files (sentences.json, verify_outputs.py, tests) | `solutions/day2_models_and_embeddings/data/sentences.json`, `verify_outputs.py`, `embeddings_map.py`, `data/my_query.txt`, `tests/test_day2.py` |
 | **Day 3** – Task A table and photo or scan of your working | Table in `docs/Day3_Writeup.pdf`; typed working in `docs/TaskA_hand_working.md`. **Photo: you must add it** |
@@ -106,14 +108,14 @@ Level 5 also scored 11/11 but needs more oversight.
 
 ---
 
-## 4. Week 1 / Day 2 – model tiers, embeddings, verification, approved tools
+## 4. Week 2 / Day 2 – model tiers, embeddings, verification, approved tools
 
 **Assignment:** Part A: compare Opus, Sonnet and Haiku on the same prompts. Part B: compare chat tools and their privacy
 settings, with your own query. Part C: embeddings map with your own topic. Part D: verify model output against the
 source document. Part E: a one-page approved-tools guideline.
 
 ```
-week1/day2/
+week2/day2/
 ├── IMPLEMENTATION_DAY2.md          REFERENCE  How Day 2 was done, part by part, and how to re-run it
 ├── .env.example                    SUBMIT     API key template (placeholder only)
 ├── docs/
@@ -142,13 +144,13 @@ run because this machine is missing the Microsoft Visual C++ runtime, so the toy
 
 ---
 
-## 5. Week 1 / Day 3 – vector mathematics and cosine similarity
+## 5. Week 2 / Day 3 – vector mathematics and cosine similarity
 
 **Assignment:** Guided Steps 1–4 (by hand, in code, check, why cosine). Task A: hand working. Task B: build `nearest()`
 with Claude and log the prompts. Task C: your own scenario matrix. Task E: misleading similarity. Stretch tasks.
 
 ```
-week1/day3/
+week2/day3/
 ├── IMPLEMENTATION_DAY3.md          REFERENCE  How Day 3 was done, decisions taken, how to re-run
 ├── STEP1_HAND_WORKING.md           SUBMIT     Guided Step 1: calculations worked by hand
 ├── STEP4_NOTES.md                  SUBMIT     Guided Step 4: notes on why cosine beats distance for text
@@ -185,7 +187,7 @@ week1/day3/
 
 ## 7. What to push to GitLab later
 
-**Rule:** push the whole `week1/dayN/` folder: everything labelled SUBMIT and EVIDENCE. The REFERENCE files
+**Rule:** push the whole `weekN/dayN/` folders: everything labelled SUBMIT and EVIDENCE. The REFERENCE files
 (`IMPLEMENTATION_DAYn.md`) are for our understanding. Pushing them is fine, but if GitLab should contain only the
 deliverables, leave them out.
 
@@ -199,15 +201,15 @@ git clone https://github.com/ashok5451chicha/genaiops_training.git
 git clone <your-gitlab-repo-url> gitlab_repo
 
 # 3. Copy the week/day folders across
-cp -r genaiops_training/week1 gitlab_repo/
+cp -r genaiops_training/week1 genaiops_training/week2 gitlab_repo/
 # optional: leave out the reference notes
-# rm gitlab_repo/week1/day*/IMPLEMENTATION_DAY*.md
+# rm gitlab_repo/week*/day*/IMPLEMENTATION_DAY*.md
 
 # 4. Check that no key is included, then push
 cd gitlab_repo
 grep -rE "sk-ant-[A-Za-z0-9_-]{20,}" . --exclude-dir=.git   # must print nothing
-git add week1
-git commit -m "Week 1 homework: day 1-3"
+git add week1 week2
+git commit -m "Week 1 and week 2 homework: day 1-3"
 git push
 ```
 
@@ -216,12 +218,12 @@ git push
 If the trainer wants the full course code with your changes on top:
 
 ```bash
-# Day 1 (Day 2 is the same course repo: repeat with day2)
+# Day 1 (Day 2 uses the same course repo: repeat with genaiops_training/week2/day2 into a folder day2)
 git clone https://github.com/digibhatia/automation-to-agentic-spectrum.git day1
 cp -r genaiops_training/week1/day1/. day1/          # overlay the homework files
 # Day 3
 git clone https://github.com/digibhatia/cosine-vector-mathematics.git day3
-cp -r genaiops_training/week1/day3/. day3/
+cp -r genaiops_training/week2/day3/. day3/
 ```
 
 Then point each folder at GitLab (`git remote set-url origin <gitlab-url>`), commit and push. To check before

@@ -1,6 +1,6 @@
 # Day 3 – Vector Mathematics: guided lab and unguided assignment
 
-Repository: `cosine-vector-mathematics` (local clone in `training/week1/day3`).
+Repository: `cosine-vector-mathematics` (local clone in `training/week2/day3`).
 
 ## Checklist
 

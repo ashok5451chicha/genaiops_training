@@ -1,6 +1,6 @@
 # Day 2 Take-Home – Model tiers, embeddings and verification
 
-Repository: `automation-to-agentic-spectrum` (local clone in `training/week1/day2`). All data is synthetic. No `.env`, API
+Repository: `automation-to-agentic-spectrum` (local clone in `training/week2/day2`). All data is synthetic. No `.env`, API
 key or real data is included. Raw output of every run is in `outputs/day2_runs/`; the reports are in `outputs/`.
 
 ## Before you start

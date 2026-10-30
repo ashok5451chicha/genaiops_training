@@ -1,6 +1,6 @@
 # Day 3 – how it was implemented
 
-Repository: `https://github.com/digibhatia/cosine-vector-mathematics`, cloned to `training/week1/day3`. **Nothing
+Repository: `https://github.com/digibhatia/cosine-vector-mathematics`, cloned to `training/week2/day3`. **Nothing
 committed or pushed.** No API key is needed or used in this lab. Write-up: `docs/Day3_Writeup.md` / `.pdf`.
 
 ## Files
@@ -46,7 +46,7 @@ committed or pushed.** No API key is needed or used in this lab. Write-up: `docs
 ## Reproduce
 
 ```powershell
-cd training\week1\day3
+cd training\week2\day3
 python step1_by_hand_check.py --show
 python step3_check_my_code.py
 python step4_why_cosine.py
